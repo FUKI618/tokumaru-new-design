@@ -17,8 +17,8 @@ const siteUrl = Astro.site ?? new URL(Astro.url.origin);
 const homeUrl = new URL(homePath, siteUrl).toString();
 const ogImage = new URL(assetPath("og-image.png"), siteUrl).toString();
 const faviconUrl = assetPath("favicon.svg");
-const isGitHubPages = siteUrl.hostname === "fuki618.github.io";
-const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "index, follow, max-image-preview:large";
+const noindex = process.env.PUBLIC_NOINDEX === "1";
+const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, follow, max-image-preview:large";
 ---
 
 <!doctype html>
@@ -26,11 +26,9 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#13212a" />
     <title>{title}</title>
 
     <!-- Canonical -->
@@ -62,7 +60,7 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Old+Mincho:wght@700;900&display=swap"
       rel="stylesheet"
     />
 
@@ -115,6 +113,13 @@ const robots = isGitHubPages ? "noindex, nofollow, max-image-preview:large" : "i
       "priceRange": "$$",
       "openingHours": "Mo-Su 09:00-21:00",
       "address": { "@type": "PostalAddress", "addressLocality": "名古屋市中区", "addressRegion": "愛知県", "addressCountry": "JP" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "telephone": company.phone,
+        "availableLanguage": ["ja"],
+        "areaServed": "JP"
+      },
       "areaServed": [
         { "@type": "City", "name": "名古屋市", "containedInPlace": { "@type": "State", "name": "愛知県" } },
         { "@type": "City", "name": "あま市" }, { "@type": "City", "name": "清須市" },
