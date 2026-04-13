@@ -1,0 +1,35 @@
+---
+import { specializedPages, pagePath, homePath } from "../lib/site";
+
+interface Props {
+  currentSlug?: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const allPages = [
+  { slug: "", shortTitle: "総合トップ", href: homePath },
+  ...specializedPages.map((p) => ({ slug: p.slug, shortTitle: p.shortTitle, href: pagePath(p.slug) })),
+];
+---
+
+<!-- サービス一覧ナビ：LPのセクションとして自然に溶け込むデザイン -->
+<nav class="border-y border-cream-dark bg-white" aria-label="サービスメニュー">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="flex items-center gap-1 py-2.5 overflow-x-auto scrollbar-hide">
+      {allPages.map((page) => (
+        <a
+          href={page.href}
+          class:list={[
+            "flex-shrink-0 px-4 py-2 rounded-full text-xs md:text-[13px] font-bold transition-all whitespace-nowrap",
+            (page.slug === "" ? !currentSlug : currentSlug === page.slug)
+              ? "bg-navy text-white"
+              : "text-warm-gray hover:bg-cream hover:text-navy"
+          ]}
+        >
+          {page.shortTitle}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

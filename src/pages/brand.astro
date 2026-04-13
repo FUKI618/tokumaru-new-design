@@ -1,0 +1,60 @@
+---
+import SpecializedLP from "../layouts/SpecializedLP.astro";
+import CTASection from "../components/CTASection.astro";
+const faqs = [
+  { q: "箱や保証書がなくても買取できますか？", a: "付属品なしでも買取可能です。ただし箱・保証書・購入証明書が揃っていれば査定額がアップします。" },
+  { q: "傷や汚れがあるブランド品でも売れますか？", a: "状態不良品でも買取対象です。使用感があるお品物でもお気軽にご相談ください。" },
+  { q: "金のアクセサリーが壊れていても買い取れますか？", a: "はい。貴金属は壊れていても地金としての価値で買取可能です。チェーン切れ・片方だけのピアスなども対応します。" },
+  { q: "本物かどうかわからないのですが査定してもらえますか？", a: "もちろんです。鑑定経験豊富なスタッフが真贋判定いたします。偽物の場合は買取不可ですが査定自体は無料です。" },
+  { q: "LINEで写真を送って査定してもらえますか？", a: "はい。LINEで写真を送るだけで概算査定が可能です。まずはお気軽にお写真をお送りください。" },
+  { q: "複数ブランド品をまとめて売ると高くなりますか？", a: "まとめ売りで査定額を上乗せしております。家電や貴金属と一緒にご依頼いただくことも可能です。" },
+];
+---
+<SpecializedLP title="名古屋のブランド品・貴金属 出張買取｜徳丸商会" description="名古屋市でブランド品・貴金属・腕時計の出張買取なら徳丸商会。ご自宅で査定、その場で現金払い。壊れた貴金属もOK。出張費0円。052-990-3968" slug="brand">
+  <section class="bg-gradient-to-br from-navy via-navy-light to-navy text-white py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <p class="text-gold text-xs md:text-sm font-bold mb-3">ブランド品・貴金属の出張買取</p>
+      <h1 class="text-2xl md:text-5xl font-black leading-tight mb-4">ブランド品・貴金属を<br /><span class="text-gold">高価買取</span>いたします</h1>
+      <p class="text-sm md:text-lg text-white/80 mb-6 leading-relaxed">店舗に持ち込む手間なし。ご自宅でゆっくり査定、納得の価格で現金買取。</p>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">買取対象アイテム</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {["ブランドバッグ","ブランド財布・小物","腕時計（ロレックス等）","金・プラチナ・銀","ダイヤモンド・宝石","ブランドアクセサリー","ブランド衣類・靴","香水・コスメ","壊れた貴金属・片方ピアス"].map((item) => (
+          <div class="bg-cream rounded-xl p-4 text-center"><p class="text-navy font-bold text-xs md:text-sm">{item}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">出張買取のメリット</h2>
+      <div class="space-y-4">
+        {[{title:"店舗に行く必要なし",text:"ご自宅にお伺いするので、貴重品を持ち歩くリスクがありません。"},{title:"プライバシーが守られる",text:"店頭での人目を気にせず、ご自宅で安心して査定を受けられます。"},{title:"まとめ売りで高額に",text:"ブランド品に加え、家電・家具もまとめてご依頼いただくと総額で高値がつきやすくなります。"},{title:"壊れた貴金属もOK",text:"チェーン切れ・変色・片方だけのピアスも、地金としての価値で買取いたします。"}].map((item) => (
+          <div class="bg-white rounded-xl p-5 border border-cream-dark"><h3 class="font-bold text-navy mb-1 text-sm md:text-base">{item.title}</h3><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{item.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CTASection id="cta-mid" variant="mid" />
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-3xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">ブランド品・貴金属買取のよくある質問</h2>
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <div x-data="{ open: false }" class="bg-white rounded-xl border border-cream-dark overflow-hidden">
+            <button x-on:click="open = !open" class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-cream/50 transition-colors" x-bind:aria-expanded="open.toString()">
+              <div class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 bg-navy text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">Q</span><span class="font-bold text-navy text-sm">{faq.q}</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-warm-gray flex-shrink-0 transition-transform duration-300" x-bind:class="open && 'rotate-180'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div x-show="open" x-transition class="px-4 pb-4" style="display: none;">
+              <div class="flex items-start gap-2 pt-2 border-t border-cream-dark"><span class="flex-shrink-0 w-6 h-6 bg-gold text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">A</span><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{faq.a}</p></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</SpecializedLP>

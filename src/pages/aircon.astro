@@ -1,0 +1,73 @@
+---
+import SpecializedLP from "../layouts/SpecializedLP.astro";
+import CTASection from "../components/CTASection.astro";
+const faqs = [
+  { q: "エアコンの取り外し工事もやってもらえますか？", a: "はい。買取成立時は取り外し工事費無料で対応いたします。配管の取り外しから壁穴の補修まで丁寧に作業します。" },
+  { q: "製造から何年以内なら買取できますか？", a: "5年以内が高価買取の目安です。6〜10年は状態次第で買取可能。10年以上は無料回収または有料処分となる場合があります。" },
+  { q: "業務用エアコンも買取対象ですか？", a: "はい。天井埋め込み型・天井吊り型など業務用エアコンも取り外し工事込みで対応可能です。" },
+  { q: "解体予定の建物のエアコンも対応できますか？", a: "解体前物件のエアコン取り外し・買取も対応しております。複数台まとめてのご依頼で査定額アップ。" },
+  { q: "高い場所に設置されたエアコンでも大丈夫ですか？", a: "高所作業にも対応しております。設置場所の状況を事前にお知らせいただけるとスムーズです。" },
+  { q: "買取できない場合はどうなりますか？", a: "条件次第で無料回収、または有料処分（リサイクル料990円程度+取り外し費）で対応いたします。" },
+];
+---
+<SpecializedLP title="名古屋のエアコン取外し・出張買取｜徳丸商会" description="名古屋市でエアコンの取外し・出張買取なら徳丸商会。取外し工事込みで買取。ダイキン・パナソニック等全メーカー対応。出張費0円。052-990-3968" slug="aircon">
+  <section class="bg-gradient-to-br from-navy via-navy-light to-navy text-white py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <p class="text-gold text-xs md:text-sm font-bold mb-3">取外し工事込みの出張買取</p>
+      <h1 class="text-2xl md:text-5xl font-black leading-tight mb-4">エアコンを<br /><span class="text-gold">取外し込みで買取</span></h1>
+      <p class="text-sm md:text-lg text-white/80 mb-6 leading-relaxed">面倒な取外し工事もスタッフが対応。取外し費用は買取額から差し引きません。</p>
+      <div class="text-center"><p class="text-2xl md:text-3xl font-black text-gold">¥21,000<span class="text-sm">〜</span></p><p class="text-[10px] md:text-xs text-white/60">エアコン買取実績</p></div>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">エアコン処分方法の比較</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse"><thead><tr class="bg-navy text-white"><th class="px-3 py-3 text-left rounded-tl-lg">方法</th><th class="px-3 py-3 text-center">費用</th><th class="px-3 py-3 text-center">手間</th><th class="px-3 py-3 text-center rounded-tr-lg">おすすめ</th></tr></thead>
+        <tbody>
+          {[["出張買取（当社）","0円（現金GET）","◎ 楽","★★★"],["家電量販店引取","3,000〜6,000円","○ 普通","★★"],["自治体回収","990円+取外費","△ 手間大","★"],["不用品回収業者","5,000〜10,000円","○ 普通","★"]].map(([m,c,e,r],i)=>(
+            <tr class={i===0?"bg-cta/5 font-bold":i%2===0?"bg-cream":"bg-white"}><td class="px-3 py-3 text-navy">{m}</td><td class="px-3 py-3 text-center">{c}</td><td class="px-3 py-3 text-center">{e}</td><td class="px-3 py-3 text-center">{r}</td></tr>
+          ))}
+        </tbody></table>
+      </div>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">容量別の買取相場</h2>
+      <div class="space-y-3">
+        {[{size:"〜10畳（2.8kW以下）",range:"10,000〜30,000円"},{size:"10〜20畳（2.8〜6.3kW）",range:"30,000〜70,000円"},{size:"20畳〜（6.3kW以上）",range:"50,000〜100,000円"}].map((item)=>(
+          <div class="bg-white rounded-xl p-5 border border-cream-dark flex justify-between items-center"><span class="text-navy font-bold text-sm">{item.size}</span><span class="text-cta font-black text-lg">{item.range}</span></div>
+        ))}
+      </div>
+      <p class="text-warm-gray-light text-xs mt-4 text-center">※メーカー・年式・状態により異なります</p>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">エアコン買取のベストタイミング</h2>
+      <div class="bg-cream rounded-xl p-6 border border-cream-dark text-left max-w-2xl mx-auto">
+        <p class="text-warm-gray text-sm leading-[1.9]">エアコンは<strong class="text-navy">春〜初夏（3月〜6月）</strong>が最も高く売れる時期です。夏前に中古エアコンの需要が高まるため、買取価格が上がります。引越しシーズンと重なるこの時期に、不要なエアコンをまとめて売却するのがおすすめです。</p>
+      </div>
+    </div>
+  </section>
+  <CTASection id="cta-mid" variant="mid" />
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-3xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">エアコン買取のよくある質問</h2>
+      <div class="space-y-3">
+        {faqs.map((faq)=>(
+          <div x-data="{ open: false }" class="bg-white rounded-xl border border-cream-dark overflow-hidden">
+            <button x-on:click="open = !open" class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-cream/50 transition-colors" x-bind:aria-expanded="open.toString()">
+              <div class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 bg-navy text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">Q</span><span class="font-bold text-navy text-sm">{faq.q}</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-warm-gray flex-shrink-0 transition-transform duration-300" x-bind:class="open && 'rotate-180'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div x-show="open" x-transition class="px-4 pb-4" style="display: none;">
+              <div class="flex items-start gap-2 pt-2 border-t border-cream-dark"><span class="flex-shrink-0 w-6 h-6 bg-gold text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">A</span><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{faq.a}</p></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</SpecializedLP>

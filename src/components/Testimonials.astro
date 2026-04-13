@@ -1,0 +1,84 @@
+---
+// Social Proof: お客様の声で安心感と行動の正当化
+const testimonials = [
+  {
+    text: "引越し前日に慌てて電話しましたが、2時間後には全部片付きました。しかも思った以上の金額で買い取ってもらえて助かりました。",
+    name: "名古屋市中区 T.S様",
+    tag: "引越し",
+    stars: 5,
+  },
+  {
+    text: "LINEで写真を送ったらすぐに概算が出て、翌日には訪問してもらえました。重い冷蔵庫の搬出も手際よくて、お願いして本当によかったです。",
+    name: "名古屋市緑区 M.K様",
+    tag: "家電買取",
+    stars: 5,
+  },
+  {
+    text: "他社で断られた古い家具も査定してくれて、値段がついたのは驚きでした。スタッフの方も丁寧で、家族にも勧めています。",
+    name: "あま市 Y.N様",
+    tag: "家具買取",
+    stars: 5,
+  },
+];
+---
+
+<section id="testimonials" class="py-12 md:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-lg md:text-2xl font-bold text-center text-navy mb-4">
+      ご利用いただいたお客様の声
+    </h2>
+    <p class="text-warm-gray text-sm mb-8 md:mb-12">
+      多くのお客様にご満足いただいています
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {testimonials.map((item) => (
+        <div class="bg-cream rounded-xl p-6 border border-cream-dark relative">
+          <!-- Quote icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gold/30 absolute top-4 right-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+          </svg>
+
+          <!-- Stars -->
+          <div class="flex gap-0.5 mb-3">
+            {Array.from({ length: item.stars }).map(() => (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            ))}
+          </div>
+
+          <!-- Tag -->
+          <span class="inline-block bg-navy/5 text-navy text-xs font-bold px-2.5 py-1 rounded-full mb-3">
+            {item.tag}
+          </span>
+
+          <!-- Text -->
+          <p class="text-warm-gray leading-relaxed text-sm mb-4">
+            {item.text}
+          </p>
+
+          <!-- Name -->
+          <p class="text-navy font-bold text-sm">{item.name}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Aggregate rating -->
+    <div class="mt-8 md:mt-10 text-center">
+      <div class="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 bg-gold/5 border border-gold/20 rounded-2xl sm:rounded-full px-5 py-3">
+        <div class="flex gap-0.5">
+          {Array.from({ length: 5 }).map(() => (
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-gold" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          ))}
+        </div>
+        <span class="text-navy font-bold text-sm">お客様満足度 98%<span class="text-warm-gray-light font-normal text-xs ml-1">（自社調べ）</span></span>
+      </div>
+      <p class="text-warm-gray-light text-xs mt-3">
+        ※2026年4月時点の自社アンケート集計です。
+      </p>
+    </div>
+  </div>
+</section>

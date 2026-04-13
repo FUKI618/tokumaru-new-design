@@ -1,0 +1,79 @@
+---
+import SpecializedLP from "../layouts/SpecializedLP.astro";
+import CTASection from "../components/CTASection.astro";
+const faqs = [
+  { q: "引越し当日でも不用品回収をお願いできますか？", a: "はい、即日対応可能です。引越し前日や当日の急なご依頼にも柔軟に対応いたします。" },
+  { q: "見積もりと実際の料金が変わることはありますか？", a: "お見積もり後の追加料金は一切ありません。現地確認後に正式な金額をお伝えし、ご了承いただいてから作業を開始します。" },
+  { q: "買い取れるものがあれば回収費用から引いてもらえますか？", a: "はい、その場で査定し、回収費用から買取額を差し引きます。実質の負担額を大幅に減らせます。" },
+  { q: "名古屋市の粗大ゴミ回収が間に合わないのですが…", a: "自治体の回収は予約が2〜3週間先になることも。当社なら即日〜翌日で回収可能です。" },
+  { q: "エアコンの取り外しや大型家具の解体もできますか？", a: "エアコン取り外し・タンスの解体・ベッドの分解など、すべて対応いたします。" },
+  { q: "土日祝日や夜間でも対応できますか？", a: "9:00〜21:00で年中無休対応しております。お仕事帰りの時間帯でもご依頼可能です。" },
+];
+---
+<SpecializedLP title="名古屋の引越し不用品回収・買取｜徳丸商会" description="名古屋市で引越し時の不用品回収・買取なら徳丸商会。家電・家具をまとめて回収、買取額で処分費を相殺。即日対応・出張費0円。052-990-3968" slug="moving">
+  <section class="bg-gradient-to-br from-navy via-navy-light to-navy text-white py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <p class="text-gold text-xs md:text-sm font-bold mb-3">引越し時の不用品処分に</p>
+      <h1 class="text-2xl md:text-5xl font-black leading-tight mb-4">引越し不用品を<br /><span class="text-gold">まるごと回収・買取</span></h1>
+      <p class="text-sm md:text-lg text-white/80 mb-6 leading-relaxed">処分にお金をかける必要はありません。買取額で処分費を相殺できます。</p>
+      <div class="flex justify-center gap-6 md:gap-10">
+        <div class="text-center"><p class="text-2xl md:text-3xl font-black text-gold">即日<span class="text-sm">対応</span></p><p class="text-[10px] md:text-xs text-white/60">引越し前日でもOK</p></div>
+        <div class="w-px bg-white/20"></div>
+        <div class="text-center"><p class="text-2xl md:text-3xl font-black text-gold">0<span class="text-sm">円</span></p><p class="text-[10px] md:text-xs text-white/60">出張費・見積もり</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">こんなお悩みありませんか？</h2>
+      <div class="space-y-3">
+        {["引越し日が迫っているのに不用品が片付かない","粗大ゴミの回収日まで待てない・予約が取れない","家電リサイクル料を払って処分するのがもったいない","家電・家具をまとめて一度に処分したい","新居に持っていけない大型家具がある"].map((pain) => (
+          <div class="flex items-start gap-3 bg-cream rounded-xl p-4"><span class="text-cta font-bold mt-0.5 text-sm">✓</span><p class="text-warm-gray text-sm">{pain}</p></div>
+        ))}
+      </div>
+      <p class="text-center text-navy font-bold text-sm mt-6">すべて徳丸商会が解決します</p>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">買取額で処分費を相殺</h2>
+      <div class="bg-white rounded-xl p-6 border border-cream-dark max-w-lg mx-auto">
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between"><span class="text-warm-gray">不用品回収費用</span><span class="text-navy font-bold">35,000円</span></div>
+          <div class="flex justify-between text-cta"><span>家電買取（冷蔵庫+洗濯機）</span><span class="font-bold">-28,000円</span></div>
+          <div class="border-t border-cream-dark pt-3 flex justify-between"><span class="text-navy font-bold">実質お支払い</span><span class="text-navy font-black text-lg">7,000円</span></div>
+        </div>
+      </div>
+      <p class="text-warm-gray-light text-xs mt-4 text-center">※金額は一例です。お品物の内容により異なります。</p>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">引越し不用品回収の流れ</h2>
+      <div class="space-y-4">
+        {[{step:"01",title:"お電話・LINEでご連絡",text:"引越し日と処分したいお品物をお伝えください。"},{step:"02",title:"訪問・査定・買取",text:"買取できるものは現金でお支払い。処分品もまとめてお引き取り。"},{step:"03",title:"搬出・簡易清掃",text:"大型家具の搬出から簡易清掃まで対応。退去前にスッキリ。"}].map((item) => (
+          <div class="bg-cream rounded-xl p-5 flex gap-4 items-start"><span class="bg-navy text-gold font-bold text-xs px-2.5 py-1 rounded-full flex-shrink-0">STEP {item.step}</span><div><h3 class="font-bold text-navy mb-1 text-sm md:text-base">{item.title}</h3><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{item.text}</p></div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CTASection id="cta-mid" variant="mid" />
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-3xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">引越し不用品回収のよくある質問</h2>
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <div x-data="{ open: false }" class="bg-white rounded-xl border border-cream-dark overflow-hidden">
+            <button x-on:click="open = !open" class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-cream/50 transition-colors" x-bind:aria-expanded="open.toString()">
+              <div class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 bg-navy text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">Q</span><span class="font-bold text-navy text-sm">{faq.q}</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-warm-gray flex-shrink-0 transition-transform duration-300" x-bind:class="open && 'rotate-180'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div x-show="open" x-transition class="px-4 pb-4" style="display: none;">
+              <div class="flex items-start gap-2 pt-2 border-t border-cream-dark"><span class="flex-shrink-0 w-6 h-6 bg-gold text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">A</span><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{faq.a}</p></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</SpecializedLP>

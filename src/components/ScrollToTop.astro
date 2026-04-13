@@ -1,0 +1,25 @@
+<script is:inline>
+// 強制トップスクロール（実機Safari/Chrome対応）
+(function(){
+  if(location.hash) return;
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  
+  // 即座に
+  document.documentElement.style.scrollBehavior='auto';
+  window.scrollTo(0,0);
+  
+  // DOM読み込み後
+  document.addEventListener('DOMContentLoaded',function(){
+    window.scrollTo(0,0);
+  });
+  
+  // 全リソース読み込み後（フォント含む）
+  window.addEventListener('load',function(){
+    window.scrollTo(0,0);
+    // フォント読み込みによるレイアウトシフト後にも
+    setTimeout(function(){window.scrollTo(0,0);},50);
+    setTimeout(function(){window.scrollTo(0,0);},200);
+    setTimeout(function(){window.scrollTo(0,0);},500);
+  });
+})();
+</script>

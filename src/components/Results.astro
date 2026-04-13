@@ -1,0 +1,74 @@
+---
+import { assetPath } from "../lib/site";
+
+const results = [
+  {
+    name: "冷蔵庫",
+    detail: "大型冷蔵庫 500L以上",
+    price: "39,000",
+    image: assetPath("images/results/refrigerator.jpg"),
+    alt: "高価買取した大型冷蔵庫の写真",
+  },
+  {
+    name: "洗濯機",
+    detail: "ドラム式洗濯乾燥機",
+    price: "24,500",
+    image: assetPath("images/results/washing-machine.jpg"),
+    alt: "高価買取したドラム式洗濯機の写真",
+  },
+  {
+    name: "エアコン",
+    detail: "ルームエアコン 取外し込み",
+    price: "21,000",
+    image: assetPath("images/results/aircon.jpg"),
+    alt: "高価買取したルームエアコンの写真",
+  },
+  {
+    name: "テレビ",
+    detail: "液晶テレビ 55インチ",
+    price: "17,000",
+    image: assetPath("images/results/tv.jpg"),
+    alt: "高価買取した液晶テレビの写真",
+  },
+];
+---
+
+<section id="results" class="py-12 md:py-20 bg-cream">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-lg md:text-2xl font-bold text-center text-navy mb-4">
+      名古屋の高額買取実績
+    </h2>
+    <p class="text-warm-gray-light text-sm mb-8 md:mb-12">
+      出張買取で実際にご相談いただいた高価買取事例をご紹介します
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      {results.map((item) => (
+        <div class="bg-white rounded-xl shadow-sm border border-cream-dark overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img
+              src={item.image}
+              alt={item.alt}
+              width="600"
+              height="450"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-navy text-lg mb-1">{item.name}</h3>
+            <p class="text-warm-gray-light text-xs mb-3">{item.detail}</p>
+            <p class="text-cta font-black text-2xl">
+              ¥{item.price}<span class="text-sm font-normal text-warm-gray-light">〜</span>
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-warm-gray-light text-xs mt-6">
+      ※買取相場はお品物の状態・年式・メーカーにより異なります。正確な金額は無料見積もりにてお伝えします。
+    </p>
+  </div>
+</section>

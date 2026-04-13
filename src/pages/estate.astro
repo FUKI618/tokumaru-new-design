@@ -1,0 +1,74 @@
+---
+import SpecializedLP from "../layouts/SpecializedLP.astro";
+import CTASection from "../components/CTASection.astro";
+const faqs = [
+  { q: "遺品の仕分けから全てお任せできますか？", a: "はい。貴重品の捜索・仕分け・搬出・処分まですべて対応いたします。お立ち会いが難しい場合のリモート対応も可能です。" },
+  { q: "遺品の中に売れるものがあれば買い取ってもらえますか？", a: "その場で査定し、作業費用から買取額を差し引きます。家電・家具・貴金属・ブランド品など幅広く買取可能です。" },
+  { q: "仏壇や位牌の供養もお願いできますか？", a: "提携寺院での合同供養に対応しております。個別供養のご希望もご相談ください。" },
+  { q: "遠方に住んでいて立ち会えないのですが…", a: "鍵の郵送による受け渡しと、作業の写真報告で立ち会い不要の対応が可能です。" },
+  { q: "特殊清掃が必要な場合も対応できますか？", a: "遺品整理から特殊清掃・消臭まで対応可能です。必要に応じて提携業者と連携いたします。" },
+  { q: "見積もり後に追加費用が発生しますか？", a: "お見積もり後の追加料金は一切ありません。作業内容と金額にご納得いただいてから開始します。" },
+];
+---
+<SpecializedLP title="名古屋の遺品整理・生前整理｜徳丸商会" description="名古屋市で遺品整理・生前整理なら徳丸商会。片付けから買取・供養までワンストップ対応。買取額で費用を軽減。見積もり無料。052-990-3968" slug="estate">
+  <section class="bg-gradient-to-br from-navy via-navy-light to-navy text-white py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <p class="text-gold text-xs md:text-sm font-bold mb-3">片付けから買取・供養までワンストップ</p>
+      <h1 class="text-2xl md:text-5xl font-black leading-tight mb-4">遺品整理・生前整理を<br /><span class="text-gold">丁寧にサポート</span></h1>
+      <p class="text-sm md:text-lg text-white/80 mb-6 leading-relaxed">故人の大切なお品物を丁寧に仕分け。価値あるものは買取で費用を軽減します。</p>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">間取り別の料金目安</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse"><thead><tr class="bg-navy text-white"><th class="px-3 py-3 text-left rounded-tl-lg">間取り</th><th class="px-3 py-3 text-right">料金目安</th><th class="px-3 py-3 text-right rounded-tr-lg">作業時間</th></tr></thead>
+        <tbody>
+          {[["1K〜1DK","15,000〜33,000円","1〜3時間"],["1LDK〜2DK","38,000〜79,000円","2〜6時間"],["2LDK〜3DK","70,000〜130,000円","3〜8時間"],["3LDK〜4DK","140,000〜180,000円","5〜12時間"]].map(([m,p,t],i)=>(
+            <tr class={i%2===0?"bg-cream":"bg-white"}><td class="px-3 py-3 font-bold text-navy">{m}</td><td class="px-3 py-3 text-right text-cta font-bold">{p}</td><td class="px-3 py-3 text-right text-warm-gray">{t}</td></tr>
+          ))}
+        </tbody></table>
+      </div>
+      <p class="text-warm-gray-light text-xs mt-4 text-center">※買取品がある場合、上記金額から差し引きいたします</p>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">ワンストップ対応サービス</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[{title:"遺品の仕分け・整理",text:"残すもの・処分するもの・買取するものを丁寧に仕分けします。"},{title:"不用品の買取",text:"家電・家具・貴金属・ブランド品など、価値あるものは現金で買取。"},{title:"不用品の処分・回収",text:"買取できないお品物もまとめて回収。分別の手間もかかりません。"},{title:"簡易清掃",text:"作業後のお部屋を簡易清掃。退去前の状態に整えます。"},{title:"供養の手配",text:"仏壇・位牌・写真など、提携寺院での供養を手配します。"},{title:"立ち会い不要プラン",text:"遠方の方も安心。鍵の受け渡しから作業報告まで全てお任せ。"}].map((item)=>(
+          <div class="bg-white rounded-xl p-5 border border-cream-dark"><h3 class="font-bold text-navy mb-1 text-sm md:text-base">{item.title}</h3><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{item.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">徳丸商会が選ばれる理由</h2>
+      <div class="space-y-4">
+        {[{title:"古物商許可で適正な買取",text:"許可番号：第541042309800号。法令に基づいた適正価格で遺品を買取いたします。"},{title:"追加料金なしの明朗会計",text:"お見積もり後の追加費用は一切ありません。安心してご依頼いただけます。"},{title:"ご家族の気持ちに寄り添います",text:"形見分けのご相談や、思い出の品の取り扱いにも丁寧に対応いたします。"}].map((item)=>(
+          <div class="bg-cream rounded-xl p-5"><h3 class="font-bold text-navy mb-1 text-sm md:text-base">{item.title}</h3><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{item.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CTASection id="cta-mid" variant="mid" />
+  <section class="py-12 md:py-20 bg-cream">
+    <div class="max-w-3xl mx-auto px-5">
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-8">遺品整理のよくある質問</h2>
+      <div class="space-y-3">
+        {faqs.map((faq)=>(
+          <div x-data="{ open: false }" class="bg-white rounded-xl border border-cream-dark overflow-hidden">
+            <button x-on:click="open = !open" class="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-cream/50 transition-colors" x-bind:aria-expanded="open.toString()">
+              <div class="flex items-start gap-2"><span class="flex-shrink-0 w-6 h-6 bg-navy text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">Q</span><span class="font-bold text-navy text-sm">{faq.q}</span></div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-warm-gray flex-shrink-0 transition-transform duration-300" x-bind:class="open && 'rotate-180'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div x-show="open" x-transition class="px-4 pb-4" style="display: none;">
+              <div class="flex items-start gap-2 pt-2 border-t border-cream-dark"><span class="flex-shrink-0 w-6 h-6 bg-gold text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5">A</span><p class="text-warm-gray text-xs md:text-sm leading-relaxed">{faq.a}</p></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</SpecializedLP>

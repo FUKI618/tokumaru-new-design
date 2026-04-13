@@ -1,0 +1,75 @@
+---
+import { company } from "../data/company";
+---
+
+<section id="company" class="py-12 md:py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="max-w-3xl mx-auto mb-8 md:mb-12">
+      <p class="text-center text-gold font-bold text-sm mb-2">事業者情報</p>
+      <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-3">
+        名古屋市中区の徳丸商会について
+      </h2>
+      <p class="text-warm-gray text-sm md:text-base leading-[1.8]">
+        出張買取を中心に、不用品回収、遺品整理、残置物撤去までご相談いただける地域密着の事業者です。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="rounded-2xl border border-cream-dark bg-cream p-6">
+        <h3 class="text-navy font-bold text-lg mb-4">基本情報</h3>
+        <dl class="space-y-3 text-sm md:text-base">
+          <div>
+            <dt class="text-warm-gray-light">事業者名</dt>
+            <dd class="text-navy font-bold">{company.name}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-gray-light">所在地</dt>
+            <dd class="text-navy font-bold">{company.locality}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-gray-light">対応内容</dt>
+            <dd class="text-navy font-bold">{company.serviceSummary}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-gray-light">受付時間</dt>
+            <dd class="text-navy font-bold">{company.hours}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-gray-light">古物商許可番号</dt>
+            <dd class="text-navy font-bold">{company.permitNumber}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="rounded-2xl border border-cream-dark bg-navy text-white p-6">
+        <h3 class="font-bold text-lg mb-4">お問い合わせ</h3>
+        <p class="text-white/75 text-sm leading-[1.8] mb-5">
+          名古屋市内の出張買取から、片付けを伴うご相談まで対応しています。まずはお電話かLINEでご相談ください。
+        </p>
+        <div class="space-y-3 text-sm md:text-base mb-5">
+          <p>
+            <span class="text-white/60">電話番号</span><br />
+            <a href={`tel:${company.phone}`} class="font-bold text-white hover:text-gold transition-colors">
+              {company.phone}
+            </a>
+          </p>
+          <p>
+            <span class="text-white/60">対応エリア</span><br />
+            <span class="font-bold text-white">{company.areaLabel}</span>
+          </p>
+        </div>
+        <a
+          href={company.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-xl bg-white text-navy font-bold px-5 py-3 hover:bg-cream transition-colors"
+        >
+          掲載中の会社情報を見る
+        </a>
+        <p class="text-white/50 text-xs leading-[1.8] mt-4">
+          会社情報は Zehitomo 掲載内容を参考に整理しています。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

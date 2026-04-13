@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">徳丸商会 出張買取</title>
+  <desc id="desc">名古屋の出張買取なら徳丸商会。家電・家具・ブランド品を高価買取、出張費無料。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f" />
+      <stop offset="100%" stop-color="#2a4d7a" />
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" opacity="0.12" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#dots)" />
+  <rect x="66" y="66" width="220" height="54" rx="27" fill="rgba(199,150,59,0.14)" stroke="rgba(199,150,59,0.38)" />
+  <circle cx="104" cy="93" r="7" fill="#c7963b" />
+  <text x="128" y="101" font-size="28" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="700" fill="#c7963b">買取強化中</text>
+  <text x="90" y="220" font-size="68" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="700" fill="#ffffff">名古屋の出張買取なら</text>
+  <text x="90" y="306" font-size="96" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="800" fill="#c7963b">徳丸商会</text>
+  <text x="90" y="386" font-size="34" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="rgba(255,255,255,0.85)">家電・家具・ブランド品をその場で現金買取</text>
+  <text x="90" y="434" font-size="34" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="rgba(255,255,255,0.85)">出張費・査定費0円、最短30分で訪問</text>
+  <g transform="translate(90 486)">
+    <rect width="280" height="84" rx="22" fill="#008a43" />
+    <text x="140" y="52" text-anchor="middle" font-size="34" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="700" fill="#ffffff">LINEで無料査定</text>
+  </g>
+  <g transform="translate(394 486)">
+    <rect width="330" height="84" rx="22" fill="#1a8a6e" />
+    <text x="165" y="52" text-anchor="middle" font-size="34" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="700" fill="#ffffff">052-990-3968</text>
+  </g>
+  <g transform="translate(838 128)">
+    <rect width="272" height="324" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" />
+    <text x="48" y="92" font-size="28" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="rgba(255,255,255,0.7)">累計買取実績</text>
+    <text x="48" y="154" font-size="72" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="800" fill="#c7963b">1,200件</text>
+    <text x="48" y="224" font-size="28" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="rgba(255,255,255,0.7)">お客様満足度</text>
+    <text x="48" y="286" font-size="72" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="800" fill="#c7963b">98%</text>
+    <text x="48" y="356" font-size="28" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="rgba(255,255,255,0.7)">出張費・査定費</text>
+    <text x="48" y="418" font-size="72" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" font-weight="800" fill="#c7963b">0円</text>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+---
+const features = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    title: "出張費・見積もり 0円",
+    description: "出張費・査定費・キャンセル料はすべて無料。買取が成立しなくても一切費用はかかりません。",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    title: "最短30分・即日対応",
+    description: "お電話一本で即日駆けつけます。引越し直前や急な片付けにも柔軟に対応いたします。",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>`,
+    title: "その場で現金払い",
+    description: "査定後、その場で現金をお渡し。後日振込を待つ必要はありません。",
+  },
+];
+---
+
+<section id="service" class="py-12 md:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-lg md:text-2xl font-bold text-center text-navy mb-4">
+      徳丸商会の出張買取・不用品回収サービス
+    </h2>
+    <p class="text-warm-gray-light text-sm mb-6 max-w-lg mx-auto leading-relaxed">
+      愛知県名古屋市内・近郊での出張買取、不用品回収、遺品整理まで、まとめて対応します。
+    </p>
+
+    <div class="max-w-2xl mx-auto mb-10 bg-cream rounded-xl p-5 border border-cream-dark text-sm text-warm-gray leading-relaxed text-left">
+      <p>
+        <strong class="text-navy">出張買取とは</strong>、お客様のご自宅にスタッフが訪問し、お品物をその場で査定・買取するサービスです。徳丸商会では名古屋市を中心に、不用品回収や遺品整理も含めて対応しています。出張費・見積もり・キャンセル料はすべて無料です。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+      {features.map((feature) => (
+        <div class="flex gap-4 md:block">
+          <div class="w-12 h-12 md:w-16 md:h-16 bg-navy rounded-xl md:rounded-2xl flex items-center justify-center text-gold flex-shrink-0 md:mx-auto md:mb-5 shadow-lg">
+            <Fragment set:html={feature.icon} />
+          </div>
+          <div class="md:text-center">
+            <h3 class="font-bold text-navy text-sm md:text-lg mb-1 md:mb-2">{feature.title}</h3>
+            <p class="text-warm-gray text-sm leading-relaxed">{feature.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

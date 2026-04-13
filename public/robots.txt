@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fuki618.github.io/tokumaru-shokai-lp/sitemap-index.xml

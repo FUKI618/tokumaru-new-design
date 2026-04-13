@@ -1,0 +1,29 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import SideNav from "../components/SideNav.astro";
+import CTASection from "../components/CTASection.astro";
+import Area from "../components/Area.astro";
+import Footer from "../components/Footer.astro";
+import FloatingCTA from "../components/FloatingCTA.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+}
+
+const { title, description, slug } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main>
+    <slot />
+    <SideNav currentSlug={slug} />
+    <Area />
+    <CTASection id="contact" variant="bottom" />
+  </main>
+  <Footer />
+  <FloatingCTA />
+</Layout>

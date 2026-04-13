@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.claude/
+.harness-mem/
+.playwright-mcp/
+*.png
+*.jpg

@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  /* 大蔵屋風: ダークスレート+ゴールド+レッド */
+  --color-slate: #3a4f5e;
+  --color-slate-dark: #2c3d4a;
+  --color-slate-light: #4a6070;
+
+  --color-gold: #8b7a3a;
+  --color-gold-light: #c4a94a;
+  --color-gold-bg: #f5efe5;
+
+  --color-red: #c03030;
+  --color-red-light: #d84040;
+
+  --color-green: #3a8f50;
+  --color-green-light: #4aa862;
+
+  --color-bg: #f7f7f5;
+  --color-bg-white: #ffffff;
+  --color-bg-gray: #f0ece4;
+  --color-border: #e0ddd6;
+
+  --color-text: #333333;
+  --color-text-light: #666660;
+  --color-text-lighter: #999990;
+
+  --color-line: #06c755;
+  --color-teal: #3da4ae;
+
+  --font-sans: "Noto Sans JP", sans-serif;
+}
+
+html { font-size: 16px; }
+@media (min-width: 768px) { html { font-size: 17px; } }
+html.scroll-ready { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 4rem; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.8;
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background-color: rgba(196,169,74,0.15); }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

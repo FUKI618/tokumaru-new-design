@@ -1,0 +1,66 @@
+---
+import { assetPath } from "../lib/site";
+const beforeImg = assetPath("images/before.png");
+const afterImg = assetPath("images/after.png");
+---
+
+<section id="before-after" class="py-12 md:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-lg md:text-2xl font-bold text-center text-navy mb-4">
+      まるっと回収 ビフォーアフター
+    </h2>
+    <p class="text-warm-gray text-sm mb-8 md:mb-12">
+      買取品も不用品もまとめてお引き取り。お部屋をスッキリさせます。
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+      <!-- Before -->
+      <div class="text-center">
+        <div class="rounded-xl overflow-hidden border-2 border-cream-dark mb-4 shadow-sm">
+          <img
+            src={beforeImg}
+            alt="出張買取前の不用品が散乱した部屋の様子"
+            width="600"
+            height="400"
+            class="w-full h-auto object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <span class="inline-flex items-center gap-2 bg-warm-gray/10 text-warm-gray font-bold px-5 py-2 rounded-full text-sm">
+          Before
+        </span>
+      </div>
+
+      <!-- Arrow (mobile only) -->
+      <div class="flex md:hidden justify-center -my-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <polyline points="19 12 12 19 5 12"/>
+        </svg>
+      </div>
+
+      <!-- After -->
+      <div class="text-center">
+        <div class="rounded-xl overflow-hidden border-2 border-gold/30 mb-4 shadow-sm">
+          <img
+            src={afterImg}
+            alt="出張買取後のスッキリ片付いた部屋の様子"
+            width="600"
+            height="400"
+            class="w-full h-auto object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <span class="inline-flex items-center gap-2 bg-gold/10 text-gold font-bold px-5 py-2 rounded-full text-sm">
+          After
+        </span>
+      </div>
+    </div>
+
+    <p class="text-warm-gray text-sm mt-8">
+      大型家電や家具の搬出も、スタッフが丁寧に対応します。
+    </p>
+  </div>
+</section>

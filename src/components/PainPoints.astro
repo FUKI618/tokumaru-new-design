@@ -1,0 +1,63 @@
+---
+const painPoints = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    pain: "引越し日が迫っているのに不用品が片付かない…",
+    solution: "お電話一本で即日訪問。まるごとお引き取りします。",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+    pain: "冷蔵庫やタンスが重すぎて自分では運べない…",
+    solution: "搬出は全てスタッフにお任せ。お客様は見ているだけでOK。",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    pain: "不用品の処分にお金がかかるのは嫌だ…",
+    solution: "出張費・見積もり0円。逆に高価買取で現金をお受け取りいただけます。",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    pain: "今日中になんとかしたい、急いでいる…",
+    solution: "最短30分で即日訪問。当日の急なご依頼にも対応します。",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>`,
+    pain: "1点だけで来てもらうのは申し訳ない気がする…",
+    solution: "冷蔵庫1台でも喜んで伺います。遠慮は不要です。",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+    pain: "売れるかわからないから相談しづらい…",
+    solution: "査定だけでもOK。買取不成立でも費用はかかりません。",
+  },
+];
+---
+
+<section id="pain-points" class="py-12 md:py-20 bg-cream">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-lg md:text-2xl font-bold text-center text-navy mb-4">
+      こんなお悩みありませんか？
+    </h2>
+    <p class="text-warm-gray-light text-sm md:text-base mb-8 md:mb-12">
+      一つでも当てはまったら、まずは無料相談を
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      {painPoints.map((item) => (
+        <div class="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow border border-cream-dark group">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-navy/5 rounded-xl flex items-center justify-center text-navy mb-3 md:mb-4 group-hover:bg-navy/10 transition-colors">
+            <Fragment set:html={item.icon} />
+          </div>
+          <p class="font-bold text-navy text-sm mb-2 leading-snug">{item.pain}</p>
+          <div class="flex items-start gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-cta flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <p class="text-warm-gray text-xs md:text-sm leading-relaxed">{item.solution}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

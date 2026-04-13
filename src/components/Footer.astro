@@ -1,0 +1,76 @@
+---
+import { privacyPolicyPath, sectionPath, assetPath } from "../lib/site";
+import { company } from "../data/company";
+const logoUrl = assetPath("logo.png");
+---
+<footer class="bg-navy-dark text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src={logoUrl}
+            alt="徳丸商会ロゴ"
+            width="44"
+            height="44"
+            class="w-11 h-11 object-contain"
+            style="filter: drop-shadow(0 0 1px rgba(255,255,255,0.3));"
+          />
+          <div>
+            <h3 class="text-white font-bold text-lg leading-tight">徳丸商会</h3>
+            <span class="text-xs text-gray-500 tracking-widest">TOKUMARU SHOKAI</span>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed mb-2">
+          名古屋市・近郊エリアの出張買取サービス
+        </p>
+        <p class="text-sm mb-2">
+          所在地：{company.locality}
+        </p>
+        <p class="text-sm">
+          古物商許可番号：{company.permitNumber}
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-white font-bold text-lg mb-4">お問い合わせ</h3>
+        <p class="text-sm mb-2">
+          <a href="tel:052-990-3968" class="hover:text-gold transition-colors">
+            TEL: 052-990-3968
+          </a>
+        </p>
+        <p class="text-sm mb-2">受付時間: 9:00〜21:00（年中無休）</p>
+        <a
+          href="https://lin.ee/j4wK9IM"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm hover:text-gold transition-colors"
+        >
+          LINE公式アカウント
+        </a>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="text-white font-bold text-lg mb-4">メニュー</h3>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href={sectionPath("service")} class="hover:text-gold transition-colors">サービス内容</a>
+          <a href={sectionPath("process")} class="hover:text-gold transition-colors">ご依頼の流れ</a>
+          <a href={sectionPath("items")} class="hover:text-gold transition-colors">買取品目</a>
+          <a href={sectionPath("results")} class="hover:text-gold transition-colors">高額買取実績</a>
+          <a href={sectionPath("company")} class="hover:text-gold transition-colors">会社情報</a>
+          <a href={sectionPath("area")} class="hover:text-gold transition-colors">対応エリア</a>
+          <a href={sectionPath("faq")} class="hover:text-gold transition-colors">よくある質問</a>
+          <a href={privacyPolicyPath} class="hover:text-gold transition-colors">プライバシーポリシー</a>
+          <a href={company.sourceUrl} target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">Zehitomo掲載情報</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-8 pb-20 md:pb-0 text-center text-xs">
+      <p>&copy; {new Date().getFullYear()} 徳丸商会 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
