@@ -271,6 +271,47 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
+<!--  買取品目                                      -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="items" class="py-16 md:py-24 bg-bg">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-10 reveal reveal-up">
+      <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Items</p>
+      <h2 class="text-xl md:text-3xl font-black text-text">出張買取の対応アイテム</h2>
+      <p class="text-text-light text-sm mt-2">名古屋でご相談の多い品目を幅広く買取しています</p>
+    </div>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 md:gap-4 stagger-children">
+      {[
+        { name: "冷蔵庫", img: assetPath("images/items/refrigerator.jpg") },
+        { name: "洗濯機", img: assetPath("images/items/washing-machine.jpg") },
+        { name: "エアコン", img: assetPath("images/items/aircon.jpg") },
+        { name: "テレビ", img: assetPath("images/items/tv.jpg") },
+        { name: "腕時計", img: assetPath("images/items/watch.jpg") },
+        { name: "ブランド品", img: assetPath("images/items/brand-bag.jpg") },
+        { name: "金・銀・プラチナ", img: assetPath("images/items/gold.jpg") },
+        { name: "ゲーム機", img: assetPath("images/items/game.jpg") },
+        { name: "楽器", img: assetPath("images/items/instrument.jpg") },
+        { name: "電子レンジ", img: assetPath("images/items/microwave.jpg") },
+        { name: "香水", img: assetPath("images/items/perfume.jpg") },
+        { name: "高級家具", img: assetPath("images/items/furniture.jpg") },
+      ].map(item => (
+        <div class="reveal reveal-scale text-center">
+          <div class="bg-white rounded-xl overflow-hidden border border-border shadow-sm card-hover">
+            <div class="aspect-square overflow-hidden">
+              <img src={item.img} alt={`${item.name}の出張買取`} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <p class="text-text font-bold text-xs md:text-sm py-2.5">{item.name}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="text-text-lighter text-xs mt-6 text-center reveal reveal-fade">
+      ※上記以外のリサイクル・中古品もお気軽にご相談ください
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
 <!--  選ばれる理由: チーム写真背景                   -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="relative py-20 md:py-28 overflow-hidden text-white">
