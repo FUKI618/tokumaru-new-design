@@ -12,6 +12,7 @@ const serviceCarry = assetPath("images/service-carry.jpg");
 const serviceEstate = assetPath("images/service-estate.jpg");
 const truckLoading = assetPath("images/truck-loading.jpg");
 const serviceZanchi = assetPath("images/service-zanchi.jpg");
+const bgTrust = assetPath("images/bg-trust.jpg");
 const bgPain = assetPath("images/bg-pain.jpg");
 const bgTeam = assetPath("images/bg-team.jpg");
 const bgCash = assetPath("images/bg-cash.jpg");
@@ -162,7 +163,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </section>
 
 <!-- ═══ 信頼バー ═══ -->
-<section class="bg-bg-cream py-8 border-y border-border relative overflow-hidden" x-data x-init="
+<section class="relative py-10 md:py-14 overflow-hidden text-white" x-data x-init="
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -185,19 +186,25 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   }, { threshold: 0.5 });
   observer.observe($el);
 ">
-  <div class="absolute inset-0 dots-pattern opacity-30 pointer-events-none"></div>
-  <div class="relative max-w-4xl mx-auto px-5 flex flex-wrap justify-center gap-8 md:gap-20">
-    <div class="text-center count-up">
-      <p class="number-shimmer font-black text-3xl md:text-4xl"><span data-count="1200">0</span><span class="text-sm">件+</span></p>
-      <p class="text-text-lighter text-xs mt-1">累計買取実績</p>
-    </div>
-    <div class="text-center count-up">
-      <p class="number-shimmer font-black text-3xl md:text-4xl"><span data-count="98">0</span><span class="text-sm">%</span></p>
-      <p class="text-text-lighter text-xs mt-1">お客様満足度</p>
-    </div>
-    <div class="text-center count-up">
-      <p class="number-shimmer font-black text-3xl md:text-4xl">0<span class="text-sm">円</span></p>
-      <p class="text-text-lighter text-xs mt-1">出張費・査定費</p>
+  <img src={bgTrust} alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+  <div class="absolute inset-0 bg-dark/75"></div>
+  <div class="relative max-w-4xl mx-auto px-5">
+    <div class="grid grid-cols-3 gap-4 md:gap-8">
+      <div class="text-center count-up bg-white/10 backdrop-blur-sm rounded-xl py-5 md:py-6 border border-white/10">
+        <p class="text-white font-black text-3xl md:text-5xl leading-none"><span data-count="30000">0</span></p>
+        <p class="text-terra-light text-[11px] md:text-sm font-bold mt-1">件+</p>
+        <p class="text-white/50 text-[10px] md:text-xs mt-1">累計買取実績</p>
+      </div>
+      <div class="text-center count-up bg-white/10 backdrop-blur-sm rounded-xl py-5 md:py-6 border border-white/10">
+        <p class="text-white font-black text-3xl md:text-5xl leading-none"><span data-count="98">0</span></p>
+        <p class="text-terra-light text-[11px] md:text-sm font-bold mt-1">%</p>
+        <p class="text-white/50 text-[10px] md:text-xs mt-1">お客様満足度</p>
+      </div>
+      <div class="text-center count-up bg-white/10 backdrop-blur-sm rounded-xl py-5 md:py-6 border border-white/10">
+        <p class="text-white font-black text-3xl md:text-5xl leading-none">0</p>
+        <p class="text-terra-light text-[11px] md:text-sm font-bold mt-1">円</p>
+        <p class="text-white/50 text-[10px] md:text-xs mt-1">出張費・査定費</p>
+      </div>
     </div>
   </div>
 </section>
