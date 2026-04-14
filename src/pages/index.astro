@@ -132,40 +132,39 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     </div>
   </div>
 
-  <!-- モバイル: 画像全幅 + 下部にテキストオーバーレイ -->
-  <div class="md:hidden relative">
-    <!-- 画像を大きく表示 -->
-    <img src={heroImg} alt="出張買取に向かう徳丸商会のスタッフ" class="w-full aspect-[3/4] object-cover object-right" loading="eager" />
-    <!-- 下半分に濃いグラデーション -->
-    <div class="absolute inset-0 bg-gradient-to-t from-dark from-35% via-dark/80 via-55% to-transparent"></div>
+  <!-- モバイル: フルスクリーン背景+テキスト重ね -->
+  <div class="md:hidden relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
+    <img src={heroImg} alt="出張買取に向かう徳丸商会のスタッフ" class="absolute inset-0 w-full h-full object-cover object-[75%_center]" loading="eager" />
+    <div class="absolute inset-0 bg-gradient-to-t from-dark from-30% via-dark/70 via-55% to-dark/20"></div>
 
-    <!-- テキストを画像の下半分に重ねる -->
-    <div class="absolute bottom-0 inset-x-0 px-5 pb-6">
-      <div class="flex items-center gap-2 mb-3">
-        <img src={logo} alt="徳丸商会" width="36" height="36" class="w-8 h-8" />
-        <span class="text-white font-black text-sm">徳丸商会</span>
-        <span class="text-terra-light text-[10px] font-bold">名古屋の出張買取</span>
+    <div class="relative px-5 pb-8">
+      <div class="flex items-center gap-2.5 mb-4">
+        <img src={logo} alt="徳丸商会" width="40" height="40" class="w-10 h-10" />
+        <div>
+          <span class="text-white font-black text-lg leading-tight">徳丸商会</span>
+          <span class="block text-terra-light text-[11px] font-bold">名古屋の出張買取</span>
+        </div>
       </div>
 
-      <h1 class="text-[1.65rem] font-black leading-[1.2] mb-3 tracking-tight" style="text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+      <h1 class="text-[1.75rem] font-black leading-[1.2] mb-3" style="text-shadow: 0 2px 10px rgba(0,0,0,0.7);">
         名古屋の出張買取・<br />不用品回収なら<br />
         <span class="text-gradient">徳丸商会</span>
       </h1>
 
-      <p class="text-white/70 text-[13px] mb-4 leading-relaxed" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
-        家電・家具・ブランド品の出張買取から、不用品回収・遺品整理まで。即日対応。
+      <p class="text-white/75 text-[13px] mb-4 leading-relaxed" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+        家電・家具・ブランド品の出張買取から不用品回収・遺品整理まで。即日対応。
       </p>
 
       <div class="flex flex-wrap gap-1.5 mb-5">
-        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20">高価買取</span>
-        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20">手数料 0円</span>
-        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20">最短即日</span>
-        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20">その場で現金</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">高価買取</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">手数料 0円</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">最短即日</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">現金払い</span>
       </div>
 
       <div class="flex gap-2.5 mb-3">
-        <a href="tel:052-990-3968" class="cta-glow flex-1 bg-terra text-white font-black text-sm py-3.5 rounded-xl text-center">電話で相談する</a>
-        <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="cta-glow-line flex-1 bg-line text-white font-bold text-sm py-3.5 rounded-xl text-center flex items-center justify-center gap-1.5">
+        <a href="tel:052-990-3968" class="cta-glow flex-1 bg-terra text-white font-black text-sm py-3.5 rounded-xl text-center shadow-lg">電話で相談する</a>
+        <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="cta-glow-line flex-1 bg-line text-white font-bold text-sm py-3.5 rounded-xl text-center shadow-lg flex items-center justify-center gap-1.5">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           LINE査定
         </a>
