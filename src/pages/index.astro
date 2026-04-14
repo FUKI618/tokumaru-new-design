@@ -425,7 +425,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
       <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Before / After</p>
       <h2 class="text-xl md:text-3xl font-black text-text">不用品回収・遺品整理の実例</h2>
     </div>
-    <div class="grid grid-cols-2 gap-4 md:gap-8 max-w-3xl mx-auto reveal reveal-scale">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-md md:max-w-3xl mx-auto reveal reveal-scale">
       <div class="rounded-2xl overflow-hidden shadow-lg border border-border">
         <div class="bg-dark text-white text-xs font-bold text-center py-2 tracking-wider">BEFORE</div>
         <img src={before} alt="名古屋の不用品回収・遺品整理 作業前の部屋" class="w-full" loading="lazy" />
@@ -604,13 +604,32 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 <div x-data="{ show: false }" x-init="window.addEventListener('scroll', () => { show = window.scrollY > 500 })" x-show="show"
   x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-y-full" x-transition:enter-end="translate-y-0"
   x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full"
-  class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-dark/95 backdrop-blur-md border-t border-white/10 shadow-2xl" style="display: none;">
-  <div class="flex gap-2 px-4 py-3">
-    <a href="tel:052-990-3968" class="flex-1 bg-terra text-white font-bold py-3 rounded-lg text-xs text-center shadow-lg flex items-center justify-center gap-1.5">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      電話する
+  class="fixed bottom-0 inset-x-0 z-50 md:hidden shadow-2xl" style="display: none;">
+  <!-- マーキーテキスト -->
+  <div class="bg-dark text-white overflow-hidden">
+    <div class="floating-marquee whitespace-nowrap py-1.5 text-[11px] font-bold">
+      <span class="inline-block px-4">出張費・査定費 0円</span>
+      <span class="inline-block px-4 text-terra-light">最短30分訪問</span>
+      <span class="inline-block px-4">その場で現金買取</span>
+      <span class="inline-block px-4 text-terra-light">年中無休 9:00–21:00</span>
+      <span class="inline-block px-4">出張費・査定費 0円</span>
+      <span class="inline-block px-4 text-terra-light">最短30分訪問</span>
+      <span class="inline-block px-4">その場で現金買取</span>
+      <span class="inline-block px-4 text-terra-light">年中無休 9:00–21:00</span>
+    </div>
+  </div>
+  <!-- CTAボタン -->
+  <div class="flex gap-2.5 px-4 py-3 bg-white border-t border-border">
+    <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="flex-1 bg-line text-white rounded-xl py-3 text-center shadow-lg">
+      <p class="text-[10px] font-normal opacity-80">今すぐかんたん</p>
+      <p class="font-black text-base">LINE査定</p>
+      <p class="text-[10px] font-normal opacity-80">24時間365日OK</p>
     </a>
-    <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="flex-1 bg-line text-white font-bold py-3 rounded-lg text-xs text-center shadow-lg flex items-center justify-center gap-1.5">LINE査定</a>
+    <a href="tel:052-990-3968" class="flex-1 bg-terra text-white rounded-xl py-3 text-center shadow-lg">
+      <p class="text-[10px] font-normal opacity-80">9:00〜21:00</p>
+      <p class="font-black text-base">電話で予約</p>
+      <p class="text-[10px] font-normal opacity-80">最短30分でお伺い</p>
+    </a>
   </div>
 </div>
 

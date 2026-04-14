@@ -193,6 +193,16 @@ body {
 }
 .badge-pulse { animation: badge-pulse 2s ease-in-out infinite; }
 
+/* ─── Marquee ─── */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.floating-marquee {
+  display: flex;
+  animation: marquee-scroll 12s linear infinite;
+}
+
 /* ─── Scrollbar ─── */
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
