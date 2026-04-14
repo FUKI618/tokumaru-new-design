@@ -66,72 +66,57 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 <!--  HERO                                          -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="relative bg-dark text-white overflow-hidden">
-  <img src={heroImg} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
-  <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-dark/30"></div>
-  <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/40"></div>
+  <!-- 背景: 左暗→右明のシネマティック画像 -->
+  <img src={heroImg} alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+  <div class="absolute inset-0 bg-gradient-to-r from-dark/60 via-dark/30 to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-dark/20"></div>
 
-  <div class="relative max-w-6xl mx-auto px-5 py-16 md:py-24 w-full">
-    <div class="max-w-2xl">
-      <div class="inline-flex items-center gap-2 bg-terra/20 border border-terra/40 text-terra-light rounded-full px-4 py-1.5 text-xs font-bold mb-6">
+  <div class="relative max-w-6xl mx-auto px-5 py-20 md:py-32 w-full">
+    <div class="max-w-xl">
+      <!-- バッジ -->
+      <div class="inline-flex items-center gap-2 bg-terra/20 border border-terra/40 text-terra-light rounded-full px-4 py-1.5 text-xs font-bold mb-6 badge-pulse">
         <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-terra opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-terra-light"></span></span>
         買取強化中 ― お早めにご相談を
       </div>
 
-      <div class="flex items-center gap-3 mb-5">
-        <img src={logo} alt="徳丸商会" width="56" height="56" class="w-12 h-12 md:w-14 md:h-14 drop-shadow-lg" />
+      <!-- ロゴ+社名 -->
+      <div class="flex items-center gap-3 mb-6">
+        <img src={logo} alt="徳丸商会" width="48" height="48" class="w-10 h-10 md:w-12 md:h-12" />
         <div>
-          <span class="text-white font-black text-xl md:text-2xl">徳丸商会</span>
-          <span class="text-terra-light text-xs md:text-sm font-bold ml-2">名古屋の出張買取</span>
+          <span class="text-white font-black text-lg md:text-xl">徳丸商会</span>
+          <span class="text-terra-light text-xs font-bold ml-2">名古屋の出張買取</span>
         </div>
       </div>
 
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] mb-4 tracking-tight">
-        <span class="block">名古屋の出張買取・</span>
-        <span class="block">不用品回収なら</span>
-        <span class="block text-gradient mt-1">徳丸商会</span>
+      <!-- H1 -->
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-5 tracking-tight drop-shadow-lg">
+        名古屋の出張買取・<br />不用品回収なら<br />
+        <span class="text-gradient">徳丸商会</span>
       </h1>
 
-      <div class="md:hidden my-6 rounded-xl overflow-hidden shadow-2xl border border-white/10">
-        <img src={heroImg} alt="出張買取に向かうスタッフ" class="w-full aspect-[16/9] object-cover" loading="eager" />
-      </div>
-
-      <p class="text-white/55 text-sm md:text-base mb-8 max-w-md leading-relaxed">
-        家電・家具・ブランド品の出張買取から、不用品回収・遺品整理まで。<br class="hidden md:inline" />お電話一本で即日対応いたします。
+      <p class="text-white/70 text-sm md:text-base mb-8 max-w-md leading-relaxed drop-shadow">
+        家電・家具・ブランド品の出張買取から、不用品回収・遺品整理まで。お電話一本で即日対応いたします。
       </p>
 
-      <!-- 選ばれる3つの理由 -->
-      <div class="bg-white/[0.07] backdrop-blur-md rounded-2xl p-5 md:p-6 border border-white/10 mb-8 max-w-xl">
-        <p class="text-terra-light text-xs font-bold text-center mb-4 tracking-wider uppercase">Why Choose Us</p>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <div class="w-14 h-14 mx-auto mb-2 rounded-full bg-gradient-to-br from-terra to-amber flex items-center justify-center shadow-lg">
-              <span class="text-white font-black text-sm">¥UP</span>
-            </div>
-            <p class="text-white text-xs leading-tight font-bold">どこよりも<br />高価買取</p>
-          </div>
-          <div>
-            <div class="w-14 h-14 mx-auto mb-2 rounded-full bg-gradient-to-br from-terra to-amber flex items-center justify-center shadow-lg">
-              <span class="text-white font-black text-lg">0<span class="text-[9px]">円</span></span>
-            </div>
-            <p class="text-white text-xs leading-tight font-bold">手数料すべて<br />0円</p>
-          </div>
-          <div>
-            <div class="w-14 h-14 mx-auto mb-2 rounded-full bg-gradient-to-br from-terra to-amber flex items-center justify-center shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <p class="text-white text-xs leading-tight font-bold">最短即日<br />スピード対応</p>
-          </div>
-        </div>
+      <!-- 3つの理由: コンパクトな横並びバッジ -->
+      <div class="flex flex-wrap gap-2 mb-8">
+        <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">高価買取</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">手数料 0円</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">最短即日対応</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">その場で現金</span>
       </div>
 
+      <!-- CTA -->
       <div class="flex flex-col sm:flex-row gap-3 mb-4">
-        <a href="tel:052-990-3968" class="bg-terra hover:bg-terra-light text-white font-black text-base md:text-lg px-8 py-4 rounded-xl text-center transition-colors">今すぐ電話 052-990-3968</a>
-        <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="bg-line hover:brightness-110 text-white font-bold text-base md:text-lg px-8 py-4 rounded-xl text-center transition-all flex items-center justify-center gap-2">
+        <a href="tel:052-990-3968" class="cta-glow bg-terra hover:bg-terra-light text-white font-black text-base md:text-lg px-8 py-4 rounded-xl text-center transition-colors">
+          今すぐ電話 052-990-3968
+        </a>
+        <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="cta-glow-line bg-line hover:brightness-110 text-white font-bold text-base md:text-lg px-8 py-4 rounded-xl text-center transition-all flex items-center justify-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           LINEで写真査定
         </a>
       </div>
-      <p class="text-white/35 text-xs">受付 9:00–21:00 年中無休 / 出張費・査定費 0円 / キャンセル無料</p>
+      <p class="text-white/40 text-xs">受付 9:00–21:00 年中無休 / 出張費・査定費 0円 / キャンセル無料</p>
     </div>
   </div>
 </section>
@@ -160,17 +145,18 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   }, { threshold: 0.5 });
   observer.observe($el);
 ">
+  <div class="absolute inset-0 dots-pattern opacity-30 pointer-events-none"></div>
   <div class="relative max-w-4xl mx-auto px-5 flex flex-wrap justify-center gap-8 md:gap-20">
     <div class="text-center count-up">
-      <p class="text-terra font-black text-3xl md:text-4xl"><span data-count="1200">0</span><span class="text-sm">件+</span></p>
+      <p class="number-shimmer font-black text-3xl md:text-4xl"><span data-count="1200">0</span><span class="text-sm">件+</span></p>
       <p class="text-text-lighter text-xs mt-1">累計買取実績</p>
     </div>
     <div class="text-center count-up">
-      <p class="text-terra font-black text-3xl md:text-4xl"><span data-count="98">0</span><span class="text-sm">%</span></p>
+      <p class="number-shimmer font-black text-3xl md:text-4xl"><span data-count="98">0</span><span class="text-sm">%</span></p>
       <p class="text-text-lighter text-xs mt-1">お客様満足度</p>
     </div>
     <div class="text-center count-up">
-      <p class="text-terra font-black text-3xl md:text-4xl">0<span class="text-sm">円</span></p>
+      <p class="number-shimmer font-black text-3xl md:text-4xl">0<span class="text-sm">円</span></p>
       <p class="text-text-lighter text-xs mt-1">出張費・査定費</p>
     </div>
   </div>
@@ -312,8 +298,8 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     <h2 class="text-2xl md:text-4xl font-black mb-3">その場で査定、<br class="md:hidden" />その場で現金</h2>
     <p class="text-white/60 text-sm mb-8 max-w-md mx-auto">査定だけでもOK。出張費・見積もり・キャンセル料すべて無料です。</p>
     <div class="flex flex-wrap justify-center gap-3">
-      <a href="tel:052-990-3968" class="bg-terra hover:bg-terra-light text-white font-black text-base md:text-lg px-10 py-4 rounded-xl transition-colors">052-990-3968</a>
-      <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="bg-line hover:brightness-110 text-white font-bold text-base md:text-lg px-10 py-4 rounded-xl transition-all">LINEで査定</a>
+      <a href="tel:052-990-3968" class="cta-glow bg-terra hover:bg-terra-light text-white font-black text-base md:text-lg px-10 py-4 rounded-xl transition-colors">052-990-3968</a>
+      <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="cta-glow-line bg-line hover:brightness-110 text-white font-bold text-base md:text-lg px-10 py-4 rounded-xl transition-all">LINEで査定</a>
     </div>
   </div>
 </section>
@@ -486,8 +472,8 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     <h2 class="text-2xl md:text-4xl font-black mb-3 leading-tight">まずはお気軽に<br />ご相談ください</h2>
     <p class="text-white/50 text-sm mb-8 max-w-md mx-auto">「いくらになるか聞いてみたい」だけでも大歓迎です。<br />査定は完全無料、キャンセル料もかかりません。</p>
     <div class="flex flex-col sm:flex-row justify-center gap-3 mb-5">
-      <a href="tel:052-990-3968" class="bg-terra hover:bg-terra-light text-white font-black text-lg px-10 py-5 rounded-xl transition-colors">052-990-3968</a>
-      <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="bg-line hover:brightness-110 text-white font-bold text-lg px-10 py-5 rounded-xl transition-all flex items-center justify-center gap-2">
+      <a href="tel:052-990-3968" class="cta-glow bg-terra hover:bg-terra-light text-white font-black text-lg px-10 py-5 rounded-xl transition-colors">052-990-3968</a>
+      <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="cta-glow-line bg-line hover:brightness-110 text-white font-bold text-lg px-10 py-5 rounded-xl transition-all flex items-center justify-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         LINEで無料査定
       </a>
