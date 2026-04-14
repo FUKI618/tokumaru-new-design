@@ -29,7 +29,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 >
 
 <!-- HEADER -->
-<header class="fixed top-0 inset-x-0 z-50 bg-slate shadow-md">
+<header class="fixed top-0 inset-x-0 z-50 bg-dark shadow-md">
   <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
     <a href={homePath} class="flex items-center gap-2">
       <img src={logo} alt="徳丸商会" width="32" height="32" class="w-8 h-8" />
@@ -42,7 +42,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
       <a href={sectionPath("faq")} class="hover:text-white">FAQ</a>
     </nav>
     <div class="flex items-center gap-2">
-      <a href="tel:052-990-3968" class="flex items-center gap-1.5 bg-red hover:bg-red-light text-white font-bold text-xs px-4 py-2 rounded">
+      <a href="tel:052-990-3968" class="flex items-center gap-1.5 bg-terra hover:bg-terra-light text-white font-bold text-xs px-4 py-2 rounded">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span class="hidden sm:inline">052-990-3968</span>
       </a>
@@ -54,25 +54,25 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 <main class="pt-14">
 
 <!-- ═══ HERO: ロゴ透かし演出 ═══ -->
-<section class="relative bg-slate text-white overflow-hidden">
+<section class="relative bg-dark text-white overflow-hidden">
   <!-- ① ロゴ透かし: 巨大+ゆっくり回転 -->
   <img src={logoClean} alt="" class="logo-watermark w-[400px] md:w-[600px] opacity-[0.06]" aria-hidden="true" />
   <!-- 右にスタッフ写真 -->
   <img src={heroImg} alt="" class="absolute right-0 top-0 h-full w-1/2 object-cover opacity-50 hidden md:block" loading="eager" />
-  <div class="absolute inset-0 bg-gradient-to-r from-slate via-slate/95 to-slate/30 hidden md:block"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/95 to-dark/30 hidden md:block"></div>
 
   <div class="relative max-w-6xl mx-auto px-5 py-16 md:py-28">
     <div class="flex items-center gap-3 mb-6">
       <img src={logo} alt="徳丸商会" width="56" height="56" class="w-14 h-14" />
       <div>
         <span class="text-white font-black text-xl md:text-2xl">徳丸商会</span>
-        <span class="text-gold-light text-sm font-bold ml-2">名古屋エリアの出張買取</span>
+        <span class="text-terra-light text-sm font-bold ml-2">名古屋エリアの出張買取</span>
       </div>
     </div>
 
     <h1 class="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-3">
       名古屋の出張買取・<br />不用品回収なら<br />
-      <span class="text-gold-light">徳丸商会</span>
+      <span class="text-terra-light">徳丸商会</span>
     </h1>
 
     <!-- モバイルでヒーロー写真 -->
@@ -86,31 +86,31 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 
     <!-- 3つの理由 -->
     <div class="bg-white rounded-xl p-5 max-w-xl shadow-xl mb-8">
-      <p class="bg-red text-white text-sm font-bold text-center py-2 rounded mb-4">徳丸商会が選ばれている3つの理由</p>
+      <p class="bg-terra text-white text-sm font-bold text-center py-2 rounded mb-4">徳丸商会が選ばれている3つの理由</p>
       <div class="grid grid-cols-3 divide-x divide-border text-center">
         <div class="px-3">
-          <div class="w-12 h-12 mx-auto mb-2 bg-teal/10 rounded-full flex items-center justify-center">
-            <span class="text-teal font-black text-base">¥↑</span>
+          <div class="w-12 h-12 mx-auto mb-2 bg-terra/10 rounded-full flex items-center justify-center">
+            <span class="text-terra font-black text-base">¥↑</span>
           </div>
-          <p class="text-text text-xs leading-tight">どこよりも<br /><strong class="text-teal">高価買取</strong></p>
+          <p class="text-text text-xs leading-tight">どこよりも<br /><strong class="text-terra">高価買取</strong></p>
         </div>
         <div class="px-3">
-          <div class="w-12 h-12 mx-auto mb-2 bg-teal/10 rounded-full flex items-center justify-center">
-            <span class="text-teal font-black text-lg">0<span class="text-[10px]">円</span></span>
+          <div class="w-12 h-12 mx-auto mb-2 bg-terra/10 rounded-full flex items-center justify-center">
+            <span class="text-terra font-black text-lg">0<span class="text-[10px]">円</span></span>
           </div>
-          <p class="text-text text-xs leading-tight">手数料すべて<br /><strong class="text-teal">0円</strong></p>
+          <p class="text-text text-xs leading-tight">手数料すべて<br /><strong class="text-terra">0円</strong></p>
         </div>
         <div class="px-3">
-          <div class="w-12 h-12 mx-auto mb-2 bg-teal/10 rounded-full flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="w-12 h-12 mx-auto mb-2 bg-terra/10 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-terra" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <p class="text-text text-xs leading-tight">最短即日<br /><strong class="text-teal">スピード対応</strong></p>
+          <p class="text-text text-xs leading-tight">最短即日<br /><strong class="text-terra">スピード対応</strong></p>
         </div>
       </div>
     </div>
 
     <div class="flex flex-col sm:flex-row gap-3 mb-3">
-      <a href="tel:052-990-3968" class="bg-red hover:bg-red-light text-white font-black text-lg px-8 py-4 rounded-xl text-center shadow-lg">今すぐ電話 052-990-3968</a>
+      <a href="tel:052-990-3968" class="bg-terra hover:bg-terra-light text-white font-black text-lg px-8 py-4 rounded-xl text-center shadow-lg">今すぐ電話 052-990-3968</a>
       <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="bg-line text-white font-bold text-lg px-8 py-4 rounded-xl text-center shadow-lg">LINEで写真査定</a>
     </div>
     <p class="text-white/40 text-xs">受付 9:00–21:00 年中無休 / 出張費・査定費0円 / キャンセル無料</p>
@@ -118,7 +118,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </section>
 
 <!-- ③ 信頼バー: カウントアップアニメーション -->
-<section class="bg-gold-bg py-6 border-y border-[#e0d8ca]" x-data x-init="
+<section class="bg-bg-cream py-6 border-y border-border" x-data x-init="
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -144,15 +144,15 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 ">
   <div class="max-w-4xl mx-auto px-5 flex flex-wrap justify-center gap-8 md:gap-16">
     <div class="text-center count-up">
-      <p class="text-gold font-black text-2xl md:text-3xl"><span data-count="1200">0</span><span class="text-sm">件+</span></p>
+      <p class="text-terra font-black text-2xl md:text-3xl"><span data-count="1200">0</span><span class="text-sm">件+</span></p>
       <p class="text-text-lighter text-xs mt-1">累計買取実績</p>
     </div>
     <div class="text-center count-up">
-      <p class="text-gold font-black text-2xl md:text-3xl"><span data-count="98">0</span><span class="text-sm">%</span></p>
+      <p class="text-terra font-black text-2xl md:text-3xl"><span data-count="98">0</span><span class="text-sm">%</span></p>
       <p class="text-text-lighter text-xs mt-1">お客様満足度</p>
     </div>
     <div class="text-center count-up">
-      <p class="text-gold font-black text-2xl md:text-3xl">0<span class="text-sm">円</span></p>
+      <p class="text-terra font-black text-2xl md:text-3xl">0<span class="text-sm">円</span></p>
       <p class="text-text-lighter text-xs mt-1">出張費・査定費</p>
     </div>
   </div>
@@ -165,12 +165,12 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {["引越し日が迫っているのに不用品が片付かない","冷蔵庫やタンスが重すぎて自分では運べない","処分にお金をかけたくない","今日中になんとかしたい","1点だけで頼むのは気が引ける","遺品整理を何から始めればいいかわからない"].map(p => (
         <div class="flex items-start gap-3 bg-bg-white rounded p-4 border border-border shadow-sm">
-          <span class="bg-red text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="bg-terra text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
           <p class="text-text text-sm leading-relaxed">{p}</p>
         </div>
       ))}
     </div>
-    <p class="text-teal font-bold text-sm text-center mt-6">すべて徳丸商会が解決します</p>
+    <p class="text-terra font-bold text-sm text-center mt-6">すべて徳丸商会が解決します</p>
   </div>
 </section>
 
@@ -181,9 +181,9 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     <p class="text-text-light text-sm mb-10 max-w-lg mx-auto">出張買取・不用品回収・遺品整理まで、まとめて対応します。</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       {[
-        { title: "出張買取", desc: "家電・家具・ブランド品を、ご自宅でその場で査定・現金買取。", color: "bg-teal" },
+        { title: "出張買取", desc: "家電・家具・ブランド品を、ご自宅でその場で査定・現金買取。", color: "bg-terra" },
         { title: "不用品回収", desc: "大量の不用品もトラック1台でまるっと回収。買取額で相殺も可能。", color: "bg-red" },
-        { title: "遺品整理", desc: "故人のお品物を丁寧に仕分け。供養や処分もお任せください。", color: "bg-slate" },
+        { title: "遺品整理", desc: "故人のお品物を丁寧に仕分け。供養や処分もお任せください。", color: "bg-dark" },
       ].map(s => (
         <div class="rounded overflow-hidden border border-border bg-bg shadow-sm">
           <div class={`${s.color} text-white text-sm font-bold px-5 py-3`}>{s.title}</div>
@@ -193,7 +193,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     </div>
     <div class="mt-8 bg-bg-gray rounded p-5 border border-border max-w-2xl mx-auto text-left">
       <p class="text-text text-sm leading-relaxed">
-        <strong class="text-teal">出張買取とは</strong>、お客様のご自宅にスタッフが訪問し、お品物をその場で査定・買取するサービスです。出張費・見積もり・キャンセル料はすべて無料です。
+        <strong class="text-terra">出張買取とは</strong>、お客様のご自宅にスタッフが訪問し、お品物をその場で査定・買取するサービスです。出張費・見積もり・キャンセル料はすべて無料です。
       </p>
     </div>
   </div>
@@ -211,7 +211,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
         { n: "04", t: "搬出もすべてお任せ", d: "重い冷蔵庫も大型タンスも、養生して傷なく運び出します。" },
       ].map(r => (
         <div class="flex gap-4 bg-bg-white rounded p-5 border border-border shadow-sm">
-          <div class="w-12 h-12 bg-teal rounded-full flex items-center justify-center flex-shrink-0"><span class="text-white font-black text-sm">{r.n}</span></div>
+          <div class="w-12 h-12 bg-terra rounded-full flex items-center justify-center flex-shrink-0"><span class="text-white font-black text-sm">{r.n}</span></div>
           <div>
             <p class="text-text font-bold text-sm mb-1">{r.t}</p>
             <p class="text-text-light text-sm leading-relaxed">{r.d}</p>
@@ -223,7 +223,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </section>
 
 <!-- ④ 流れ: 斜め区切り -->
-<section class="py-14 md:py-20 bg-slate text-white slant-top" style="margin-top:30px;">
+<section class="py-14 md:py-20 bg-dark text-white slant-top" style="margin-top:30px;">
   <div class="max-w-4xl mx-auto px-5">
     <h2 class="text-lg md:text-2xl font-black text-center mb-10">ご依頼の流れ</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -233,7 +233,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
         { n: "03", t: "搬出・お片付け完了", d: "重い物もスタッフが搬出。お部屋をスッキリきれいに。" },
       ].map(s => (
         <div class="bg-white/10 rounded-xl p-6 text-center">
-          <div class="w-14 h-14 bg-red rounded-full flex items-center justify-center mx-auto mb-4 shadow"><span class="text-white font-black text-lg">{s.n}</span></div>
+          <div class="w-14 h-14 bg-terra rounded-full flex items-center justify-center mx-auto mb-4 shadow"><span class="text-white font-black text-lg">{s.n}</span></div>
           <h3 class="text-white font-bold text-sm mb-2">{s.t}</h3>
           <p class="text-white/60 text-sm leading-relaxed">{s.d}</p>
         </div>
@@ -243,11 +243,11 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </section>
 
 <!-- CTA帯 -->
-<section class="py-8 bg-red text-white text-center">
+<section class="py-8 bg-terra text-white text-center">
   <div class="max-w-3xl mx-auto px-5">
     <p class="font-bold text-base mb-3">まずは無料見積もりから</p>
     <div class="flex flex-wrap justify-center gap-3">
-      <a href="tel:052-990-3968" class="bg-white text-red font-bold text-sm px-6 py-3 rounded shadow">052-990-3968</a>
+      <a href="tel:052-990-3968" class="bg-white text-terra font-bold text-sm px-6 py-3 rounded shadow">052-990-3968</a>
       <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="bg-line text-white font-bold text-sm px-6 py-3 rounded shadow">LINEで査定</a>
     </div>
   </div>
@@ -264,7 +264,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
           <div class="p-3">
             <p class="text-text-lighter text-xs">{r.detail}</p>
             <p class="text-text font-bold text-sm">{r.name}</p>
-            <p class="text-red font-black text-lg">¥{r.price}<span class="text-xs text-text-lighter font-normal">〜</span></p>
+            <p class="text-terra font-black text-lg">¥{r.price}<span class="text-xs text-text-lighter font-normal">〜</span></p>
           </div>
         </div>
       ))}
@@ -277,8 +277,8 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   <div class="max-w-4xl mx-auto px-5">
     <h2 class="text-lg md:text-2xl font-black text-center text-text mb-10">まるっと回収の実例</h2>
     <div class="grid grid-cols-2 gap-3 md:gap-6 max-w-3xl mx-auto">
-      <div><div class="bg-slate text-white text-xs font-bold text-center py-1.5 rounded-t">Before</div><img src={before} alt="回収前" class="w-full rounded-b shadow" loading="lazy" /></div>
-      <div><div class="bg-red text-white text-xs font-bold text-center py-1.5 rounded-t">After</div><img src={after} alt="回収後" class="w-full rounded-b shadow" loading="lazy" /></div>
+      <div><div class="bg-dark text-white text-xs font-bold text-center py-1.5 rounded-t">Before</div><img src={before} alt="回収前" class="w-full rounded-b shadow" loading="lazy" /></div>
+      <div><div class="bg-terra text-white text-xs font-bold text-center py-1.5 rounded-t">After</div><img src={after} alt="回収後" class="w-full rounded-b shadow" loading="lazy" /></div>
     </div>
   </div>
 </section>
@@ -290,7 +290,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       {voices.map(v => (
         <div class="bg-bg rounded-xl p-5 border border-border shadow-sm">
-          <div class="flex gap-0.5 mb-3">{Array.from({length:5}).map(() => <span class="text-gold-light text-sm">★</span>)}</div>
+          <div class="flex gap-0.5 mb-3">{Array.from({length:5}).map(() => <span class="text-amber-light text-sm">★</span>)}</div>
           <p class="text-text text-sm leading-relaxed mb-3">{v.text}</p>
           <p class="text-text-lighter text-xs">{v.who}</p>
         </div>
@@ -305,8 +305,8 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   <div class="max-w-5xl mx-auto px-5">
     <h2 class="text-lg md:text-2xl font-black text-center text-text mb-10">対応エリア</h2>
     <div class="md:flex md:gap-12">
-      <div class="mb-6 md:mb-0"><h3 class="text-teal font-bold text-sm mb-3">名古屋市（16区）</h3><div class="flex flex-wrap gap-x-3 gap-y-1 text-text-light text-sm">{areas.map(w => <span>{w}</span>)}</div></div>
-      <div><h3 class="text-teal font-bold text-sm mb-3">近郊エリア</h3><div class="flex flex-wrap gap-x-3 gap-y-1 text-text-light text-sm">{nearby.map(a => <span>{a}</span>)}</div></div>
+      <div class="mb-6 md:mb-0"><h3 class="text-terra font-bold text-sm mb-3">名古屋市（16区）</h3><div class="flex flex-wrap gap-x-3 gap-y-1 text-text-light text-sm">{areas.map(w => <span>{w}</span>)}</div></div>
+      <div><h3 class="text-terra font-bold text-sm mb-3">近郊エリア</h3><div class="flex flex-wrap gap-x-3 gap-y-1 text-text-light text-sm">{nearby.map(a => <span>{a}</span>)}</div></div>
     </div>
   </div>
 </section>
@@ -320,14 +320,14 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
         <div x-data="{ open: false }" class="bg-bg rounded-xl border border-border shadow-sm overflow-hidden">
           <button x-on:click="open = !open" class="w-full flex items-start justify-between gap-4 p-5 text-left" x-bind:aria-expanded="open.toString()">
             <div class="flex items-start gap-3">
-              <span class="bg-teal text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">Q</span>
+              <span class="bg-terra text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">Q</span>
               <span class="text-text font-bold text-sm leading-relaxed">{faq.question}</span>
             </div>
-            <span class="text-teal text-lg flex-shrink-0" x-bind:class="open && 'rotate-45'" style="transition:transform 0.2s;">+</span>
+            <span class="text-terra text-lg flex-shrink-0" x-bind:class="open && 'rotate-45'" style="transition:transform 0.2s;">+</span>
           </button>
           <div x-show="open" x-transition class="px-5 pb-5" style="display: none;">
             <div class="flex items-start gap-3 pl-0 md:pl-9">
-              <span class="bg-red text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">A</span>
+              <span class="bg-terra text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">A</span>
               <p class="text-text-light text-sm leading-relaxed">{faq.answer}</p>
             </div>
           </div>
@@ -338,12 +338,12 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </section>
 
 <!-- 最終CTA: 斜め区切り -->
-<section id="contact" class="py-16 md:py-24 bg-slate text-white text-center slant-top" style="margin-top:30px;">
+<section id="contact" class="py-16 md:py-24 bg-dark text-white text-center slant-top" style="margin-top:30px;">
   <div class="max-w-2xl mx-auto px-5">
     <h2 class="text-lg md:text-2xl font-black mb-3">まずはお気軽にご相談ください</h2>
     <p class="text-white/60 text-sm mb-8">「いくらになるか聞いてみたい」だけでも大歓迎です。</p>
     <div class="flex flex-wrap justify-center gap-3 mb-4">
-      <a href="tel:052-990-3968" class="bg-red hover:bg-red-light text-white font-black text-lg px-8 py-4 rounded-xl shadow-lg">052-990-3968</a>
+      <a href="tel:052-990-3968" class="bg-terra hover:bg-terra-light text-white font-black text-lg px-8 py-4 rounded-xl shadow-lg">052-990-3968</a>
       <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="bg-line text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg">LINEで無料査定</a>
     </div>
     <p class="text-white/30 text-xs">受付 9:00–21:00 年中無休 ｜ 古物商許可 第541042309800号</p>
@@ -353,7 +353,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-slate-dark text-white/40 py-12">
+<footer class="bg-dark-dark text-white/40 py-12">
   <div class="max-w-6xl mx-auto px-5 md:flex md:justify-between gap-10">
     <div class="mb-6 md:mb-0"><div class="flex items-center gap-2 mb-2"><img src={logo} alt="徳丸商会" width="24" height="24" class="w-6 h-6" /><span class="text-white/60 font-bold text-sm">徳丸商会</span></div><p class="text-xs">名古屋の出張買取・不用品回収</p><p class="text-xs">古物商許可 第541042309800号</p></div>
     <div class="flex gap-10 text-xs">
@@ -365,9 +365,9 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </footer>
 
 <!-- FLOATING CTA -->
-<div x-data="{ show: false }" x-init="window.addEventListener('scroll', () => { show = window.scrollY > 400 })" x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full" class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-slate/95 backdrop-blur border-t border-white/10" style="display: none;">
+<div x-data="{ show: false }" x-init="window.addEventListener('scroll', () => { show = window.scrollY > 400 })" x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full" class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-dark/95 backdrop-blur border-t border-white/10" style="display: none;">
   <div class="flex gap-2 px-4 py-3">
-    <a href="tel:052-990-3968" class="flex-1 bg-red text-white font-bold py-3 rounded text-xs text-center shadow">電話する</a>
+    <a href="tel:052-990-3968" class="flex-1 bg-terra text-white font-bold py-3 rounded text-xs text-center shadow">電話する</a>
     <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="flex-1 bg-line text-white font-bold py-3 rounded text-xs text-center shadow">LINE査定</a>
   </div>
 </div>
