@@ -68,7 +68,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-dark/40"></div>
   <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/50"></div>
   <!-- Logo watermark -->
-  <img src={logoClean} alt="" class="logo-watermark w-[350px] md:w-[550px] opacity-[0.04]" aria-hidden="true" />
+  <img src={logoClean} alt="" class="logo-watermark w-[450px] md:w-[700px] opacity-[0.10]" aria-hidden="true" />
   <!-- Floating particles -->
   <div class="hero-particles">
     <span></span><span></span><span></span><span></span>
@@ -596,28 +596,30 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 <!-- ═══════════════════════════════════════════════ -->
 <!--  Scroll Reveal Script                          -->
 <!-- ═══════════════════════════════════════════════ -->
-<script>
-  // Intersection Observer for scroll reveal animations
-  document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+<script is:inline>
+  // Scroll reveal: run immediately, re-run if DOM isn't ready yet
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
-
-    revealElements.forEach(el => observer.observe(el));
-  });
-
-  // Smooth scroll ready
-  window.addEventListener('load', () => {
-    setTimeout(() => document.documentElement.classList.add('scroll-ready'), 500);
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    els.forEach(function(el) { observer.observe(el); });
+  }
+  // Run on multiple timing points to ensure it works
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReveal);
+  } else {
+    initReveal();
+  }
+  window.addEventListener('load', function() {
+    initReveal();
+    setTimeout(function() { document.documentElement.classList.add('scroll-ready'); }, 300);
   });
 </script>
 

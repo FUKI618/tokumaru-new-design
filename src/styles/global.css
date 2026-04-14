@@ -8,10 +8,10 @@
   --color-amber: #dc8c3c;
   --color-amber-light: #e8a050;
 
-  --color-dark: #1a1a2e;
-  --color-dark-light: #252540;
-  --color-dark-warm: #2d2d4a;
-  --color-dark-dark: #12121f;
+  --color-dark: #2a2018;
+  --color-dark-light: #3a3028;
+  --color-dark-warm: #453830;
+  --color-dark-dark: #1e1810;
 
   --color-bg: #faf7f2;
   --color-bg-white: #ffffff;
@@ -58,7 +58,6 @@ body {
   transform: translate(-50%, -50%);
   animation: logo-drift 90s linear infinite;
   pointer-events: none; user-select: none;
-  filter: blur(1px);
 }
 
 /* ─── Floating Particles (CSS-only) ─── */
