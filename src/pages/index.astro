@@ -11,6 +11,7 @@ const after = assetPath("images/after-room.jpg");
 const serviceCarry = assetPath("images/service-carry.jpg");
 const serviceEstate = assetPath("images/service-estate.jpg");
 const truckLoading = assetPath("images/truck-loading.jpg");
+const serviceZanchi = assetPath("images/service-zanchi.jpg");
 const bgPain = assetPath("images/bg-pain.jpg");
 const bgTeam = assetPath("images/bg-team.jpg");
 const bgCash = assetPath("images/bg-cash.jpg");
@@ -203,21 +204,22 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
       <h2 class="text-xl md:text-3xl font-black text-text mb-3">不用品買取・回収・遺品整理サービス</h2>
       <p class="text-text-light text-sm max-w-lg mx-auto">出張買取・不用品回収・遺品整理・家じまいまで、まとめて対応します。</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 stagger-children">
       {[
-        { title: "出張買取", desc: "家電・家具・ブランド品を、ご自宅でその場で査定・現金買取。重い物の搬出もお任せください。", img: serviceCarry, gradient: "from-terra/80 to-dark/60" },
-        { title: "不用品回収", desc: "大量の不用品もトラック1台でまるっと回収。買取額で相殺して費用を抑えられます。", img: truckLoading, gradient: "from-dark/70 to-terra/50" },
-        { title: "遺品整理・家じまい", desc: "故人のお品物を丁寧に仕分け。供養の手配や処分もワンストップ。家じまいのご相談もお任せください。", img: serviceEstate, gradient: "from-dark/80 to-dark/40" },
+        { title: "出張買取", desc: "家電・家具・ブランド品をご自宅でその場で査定・現金買取。", img: serviceCarry },
+        { title: "不用品回収", desc: "大量の不用品もトラック1台でまるっと回収。買取額で相殺も。", img: truckLoading },
+        { title: "遺品整理・家じまい", desc: "故人のお品物を丁寧に仕分け。供養や処分もワンストップ。", img: serviceEstate },
+        { title: "残置物撤去", desc: "賃貸退去時の残置物を迅速に撤去。法人・管理会社もOK。", img: serviceZanchi },
       ].map(s => (
-        <div class="reveal reveal-scale rounded-2xl overflow-hidden shadow-md card-hover group">
+        <div class="reveal reveal-scale rounded-2xl overflow-hidden shadow-md card-hover group border border-border">
           <div class="relative aspect-[4/3] overflow-hidden">
-            <img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-            <div class={`absolute inset-0 bg-gradient-to-t ${s.gradient}`}></div>
-            <div class="absolute bottom-0 inset-x-0 p-5">
-              <h3 class="text-white font-black text-xl drop-shadow-lg">{s.title}</h3>
+            <img src={s.img} alt={`名古屋の${s.title}サービス`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent"></div>
+            <div class="absolute bottom-0 inset-x-0 p-4">
+              <h3 class="text-white font-black text-base md:text-lg drop-shadow-lg">{s.title}</h3>
             </div>
           </div>
-          <div class="p-5 bg-bg">
+          <div class="p-4 bg-white">
             <p class="text-text text-sm leading-relaxed">{s.desc}</p>
           </div>
         </div>
