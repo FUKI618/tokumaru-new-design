@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import { assetPath, homePath, sectionPath, privacyPolicyPath } from "../lib/site";
 import { faqs } from "../data/faq";
 
-const logo = assetPath("logo.png");
-const logoClean = assetPath("logo-clean.png");
+const logo = assetPath("logo.svg");
+const logoClean = assetPath("logo.svg");
 const heroImg = assetPath("images/hero-staff.jpg");
 const before = assetPath("images/before-room.jpg");
 const after = assetPath("images/after-room.jpg");
@@ -65,8 +65,8 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 <!-- ═══════════════════════════════════════════════ -->
 <!--  HERO                                          -->
 <!-- ═══════════════════════════════════════════════ -->
-<section class="relative min-h-[92vh] md:min-h-[88vh] bg-dark text-white overflow-hidden flex items-center">
-  <img src={heroImg} alt="" class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager" />
+<section class="relative bg-dark text-white overflow-hidden">
+  <img src={heroImg} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
   <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-dark/30"></div>
   <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/40"></div>
   <img src={logoClean} alt="" class="logo-watermark w-[450px] md:w-[700px] opacity-[0.10]" aria-hidden="true" />
