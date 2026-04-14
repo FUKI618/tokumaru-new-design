@@ -57,7 +57,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
       <img src={logo} alt="徳丸商会" width="56" height="56" class="w-[58px] h-[58px] md:w-[72px] md:h-[72px] transition-transform group-hover:scale-105" />
       <div class="flex flex-col">
         <span class="text-white font-black text-xl md:text-2xl leading-tight tracking-tight">徳丸商会</span>
-        <span class="text-white/60 text-[10px] md:text-xs font-bold leading-tight">名古屋の出張買取・不用品回収</span>
+        <span class="text-white/60 text-[9px] md:text-xs font-bold leading-tight whitespace-nowrap">名古屋の出張買取・不用品回収</span>
       </div>
     </a>
     <nav class="hidden md:flex items-center gap-1">
@@ -109,7 +109,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
         </p>
         <div class="flex flex-wrap gap-2 mb-8">
           <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">高価買取</span>
-          <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">手数料 0円</span>
+          <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">手数料0円</span>
           <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">最短即日対応</span>
           <span class="bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full border border-white/15">その場で現金</span>
         </div>
@@ -137,7 +137,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
         名古屋の出張買取・<br />不用品回収なら<br />
         <span class="text-terra-light" style="-webkit-text-fill-color: unset;">徳丸商会</span>
       </h1>
-      <p class="text-white/80 text-[13px] leading-relaxed" style="text-shadow: 0 1px 6px rgba(0,0,0,0.6);">
+      <p class="text-white text-[13px] leading-relaxed bg-dark/40 backdrop-blur-[2px] inline-block px-2 py-1 rounded-lg" style="text-shadow: 0 1px 6px rgba(0,0,0,0.6);">
         家電・家具・ブランド品の出張買取から<br />不用品回収・遺品整理まで。即日対応。
       </p>
     </div>
@@ -149,7 +149,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
     <div class="relative px-5 pb-6">
       <div class="flex flex-wrap gap-1.5 mb-4">
         <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">高価買取</span>
-        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">手数料 0円</span>
+        <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">手数料0円</span>
         <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">最短即日</span>
         <span class="bg-white/10 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20">現金払い</span>
       </div>
@@ -242,7 +242,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   <div class="max-w-5xl mx-auto px-5 relative">
     <div class="text-center mb-12 reveal reveal-up">
       <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Services</p>
-      <h2 class="text-xl md:text-3xl font-black text-text mb-3">不用品買取・回収・遺品整理サービス</h2>
+      <h2 class="text-lg md:text-3xl font-black text-text mb-3">不用品買取・回収・遺品整理サービス</h2>
       <p class="text-text-light text-sm max-w-lg mx-auto">出張買取・不用品回収・遺品整理・家じまいまで、まとめて対応します。</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 stagger-children">
@@ -299,7 +299,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
             <div class="aspect-square overflow-hidden">
               <img src={item.img} alt={`${item.name}の出張買取`} class="w-full h-full object-cover" loading="lazy" />
             </div>
-            <p class="text-text font-bold text-xs md:text-sm py-2.5">{item.name}</p>
+            <p class="text-text font-bold text-[11px] md:text-sm py-2 leading-tight">{item.name}</p>
           </div>
         </div>
       ))}
@@ -319,7 +319,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   <div class="relative max-w-5xl mx-auto px-5">
     <div class="text-center mb-12 reveal reveal-up">
       <p class="text-terra-light text-xs font-bold tracking-widest uppercase mb-2">Why Us</p>
-      <h2 class="text-2xl md:text-4xl font-black">名古屋で徳丸商会が選ばれる理由</h2>
+      <h2 class="text-xl md:text-4xl font-black">名古屋で徳丸商会が<br class="md:hidden" />選ばれる理由</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 stagger-children">
       {[
@@ -380,7 +380,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
   <div class="absolute inset-0 bg-dark/70"></div>
   <div class="relative max-w-3xl mx-auto px-5 reveal reveal-up">
     <p class="text-terra-light text-xs font-bold tracking-widest uppercase mb-3">Free Estimate</p>
-    <h2 class="text-2xl md:text-4xl font-black mb-3">その場で査定、<br class="md:hidden" />その場で現金</h2>
+    <h2 class="text-xl md:text-4xl font-black mb-3">その場で査定、<br class="md:hidden" />その場で現金</h2>
     <p class="text-white/60 text-sm mb-8 max-w-md mx-auto">査定だけでもOK。出張費・見積もり・キャンセル料すべて無料です。</p>
     <div class="flex flex-wrap justify-center gap-3">
       <a href="tel:052-990-3968" class="cta-glow bg-terra hover:bg-terra-light text-white font-black text-base md:text-lg px-10 py-4 rounded-xl transition-colors">電話で相談する</a>
@@ -491,7 +491,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
         </h3>
         <div class="flex flex-wrap gap-2">
           {areas.map(w => (
-            <span class="bg-white/15 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full border border-white/20">{w}</span>
+            <span class="bg-white/15 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full border border-white/20 whitespace-nowrap">{w}</span>
           ))}
         </div>
       </div>
@@ -502,7 +502,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
         </h3>
         <div class="flex flex-wrap gap-2">
           {nearby.map(a => (
-            <span class="bg-white/15 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full border border-white/20">{a}</span>
+            <span class="bg-white/15 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full border border-white/20 whitespace-nowrap">{a}</span>
           ))}
         </div>
       </div>
