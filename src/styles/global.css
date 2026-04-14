@@ -1,28 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-terra: #c85028;
-  --color-terra-light: #dc6838;
-  --color-terra-dark: #a0401e;
+  /* メイン: ロゴのテラコッタを活かした暖色系 */
+  --color-terra: #d45a2a;
+  --color-terra-light: #e47040;
+  --color-terra-dark: #b04820;
 
-  --color-amber: #dc8c3c;
-  --color-amber-light: #e8a050;
+  --color-amber: #e09040;
+  --color-amber-light: #eca858;
 
-  --color-dark: #2a2018;
-  --color-dark-light: #3a3028;
-  --color-dark-warm: #453830;
-  --color-dark-dark: #1e1810;
+  /* ダーク: 読みやすさ重視の深めブラウン */
+  --color-dark: #2c2420;
+  --color-dark-light: #3e3530;
+  --color-dark-warm: #4a4038;
+  --color-dark-dark: #201a16;
 
-  --color-bg: #faf7f2;
+  /* 背景: 明るく清潔感のある暖色 */
+  --color-bg: #fbf9f6;
   --color-bg-white: #ffffff;
-  --color-bg-warm: #f2ece2;
-  --color-bg-cream: #ede4d6;
-  --color-bg-gray: #f5f2ed;
-  --color-border: #e0d5c4;
+  --color-bg-warm: #f5f0e8;
+  --color-bg-cream: #f0e8dc;
+  --color-bg-gray: #f7f5f2;
+  --color-border: #e8ddd0;
 
-  --color-text: #2a2420;
-  --color-text-light: #6a6058;
-  --color-text-lighter: #9a9088;
+  /* テキスト: はっきり読める濃さ */
+  --color-text: #1e1a16;
+  --color-text-light: #5a5048;
+  --color-text-lighter: #8a8078;
 
   --color-line: #06c755;
   --color-red: #dc3545;
