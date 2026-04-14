@@ -390,6 +390,32 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
+<!--  買取実績                                      -->
+<!-- ═══════════════════════════════════════════════ -->
+<section id="results" class="py-16 md:py-24 bg-white relative">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12 reveal reveal-up">
+      <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Results</p>
+      <h2 class="text-xl md:text-3xl font-black text-text">名古屋の高額買取実績</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 stagger-children">
+      {results.map(r => (
+        <div class="reveal reveal-scale bg-bg rounded-2xl overflow-hidden border border-border shadow-sm card-hover group">
+          <div class="aspect-[4/3] overflow-hidden bg-bg-gray">
+            <img src={r.img} alt={`${r.name}の買取`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <p class="text-text-lighter text-xs">{r.detail}</p>
+            <p class="text-text font-bold text-sm">{r.name}</p>
+            <p class="text-gradient font-black text-xl mt-1">¥{r.price}<span class="text-xs text-text-lighter font-normal ml-0.5">〜</span></p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
 <!--  緊急性訴求: 買取価格は日々下がる               -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="py-12 md:py-16 bg-bg-cream">
@@ -416,32 +442,6 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
           <span class="text-text-light text-sm">→ 値がつかないことも</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════ -->
-<!--  買取実績                                      -->
-<!-- ═══════════════════════════════════════════════ -->
-<section id="results" class="py-16 md:py-24 bg-white relative">
-  <div class="max-w-5xl mx-auto px-5">
-    <div class="text-center mb-12 reveal reveal-up">
-      <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Results</p>
-      <h2 class="text-xl md:text-3xl font-black text-text">名古屋の高額買取実績</h2>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 stagger-children">
-      {results.map(r => (
-        <div class="reveal reveal-scale bg-bg rounded-2xl overflow-hidden border border-border shadow-sm card-hover group">
-          <div class="aspect-[4/3] overflow-hidden bg-bg-gray">
-            <img src={r.img} alt={`${r.name}の買取`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-          </div>
-          <div class="p-4">
-            <p class="text-text-lighter text-xs">{r.detail}</p>
-            <p class="text-text font-bold text-sm">{r.name}</p>
-            <p class="text-gradient font-black text-xl mt-1">¥{r.price}<span class="text-xs text-text-lighter font-normal ml-0.5">〜</span></p>
-          </div>
-        </div>
-      ))}
     </div>
   </div>
 </section>
