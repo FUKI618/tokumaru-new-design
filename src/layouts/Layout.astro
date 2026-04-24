@@ -31,6 +31,8 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
     <meta name="robots" content={robots} />
     <meta name="theme-color" content="#13212a" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com; connect-src 'self' https://www.google-analytics.com https://fonts.googleapis.com https://fonts.gstatic.com; frame-src https://www.googletagmanager.com" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <title>{title}</title>
 
     <!-- Canonical -->
@@ -115,6 +117,7 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
       "priceRange": "$$",
       "openingHours": "Mo-Su 09:00-21:00",
       "address": { "@type": "PostalAddress", "addressLocality": "名古屋市中区", "addressRegion": "愛知県", "addressCountry": "JP" },
+      "geo": { "@type": "GeoCoordinates", "latitude": "35.1709", "longitude": "136.8815" },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
@@ -153,6 +156,14 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
       }
     })} />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"徳丸商会","url":"https://www.tokumarushokai.com/","logo":"https://www.tokumarushokai.com/logo.svg","contactPoint":{"@type":"ContactPoint","telephone":"052-990-3968","contactType":"customer service","availableLanguage":"Japanese"}}</script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "徳丸商会トップ", "item": homeUrl }
+      ]
+    })} />
     {includeTopSchemas && (
       <>
         <script type="application/ld+json" set:html={JSON.stringify(faqsToJsonLd())} />
