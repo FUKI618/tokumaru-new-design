@@ -123,7 +123,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 <section class="bg-dark text-white">
   <!-- PC: 背景画像+テキストオーバーレイ -->
   <div class="relative hidden md:block overflow-hidden">
-    <img src={heroImg} alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" width="1200" height="800" />
+    <img src={heroImg} alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" width="1200" height="800" />
     <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/85 via-60% to-dark/20"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
     <div class="relative max-w-6xl mx-auto px-5 py-32 w-full">
@@ -159,7 +159,7 @@ const nearby = ["あま市","清須市","北名古屋市","津島市","愛西市
 
   <!-- モバイル -->
   <div class="md:hidden relative min-h-[70svh] flex flex-col overflow-hidden">
-    <img src={heroImg} alt="出張買取に向かう徳丸商会のスタッフ" class="absolute inset-0 w-full h-full object-cover object-[75%_40%]" loading="eager" width="1200" height="800" />
+    <img src={heroImg} alt="出張買取に向かう徳丸商会のスタッフ" class="absolute inset-0 w-full h-full object-cover object-[75%_40%]" loading="eager" fetchpriority="high" width="1200" height="800" />
     <div class="absolute inset-0 bg-gradient-to-b from-dark/90 from-0% via-dark/20 via-30% to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-dark/90 from-0% via-dark/30 via-25% to-transparent"></div>
 
