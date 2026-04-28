@@ -15,7 +15,7 @@ const { title, description, includeTopSchemas = false } = Astro.props;
 const canonicalUrl = Astro.url.href;
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
 const homeUrl = new URL(homePath, siteUrl).toString();
-const ogImage = new URL(assetPath("og-image.png"), siteUrl).toString();
+const ogImage = new URL(assetPath("og-image.webp"), siteUrl).toString();
 const faviconUrl = assetPath("favicon.svg");
 const noindex = process.env.PUBLIC_NOINDEX === "1";
 const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, follow, max-image-preview:large";
@@ -30,7 +30,7 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
     <meta name="keywords" content="出張買取,名古屋,不用品回収,不用品買取,遺品整理,家じまい,残置物撤去,家電買取,ブランド品買取,現金買取" />
     <meta name="robots" content={robots} />
     <meta name="theme-color" content="#13212a" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google-analytics.com https://www.google.co.jp; connect-src 'self' https://www.google-analytics.com https://www.google.com https://googleads.g.doubleclick.net https://analytics.google.com https://fonts.googleapis.com https://fonts.gstatic.com https://region1.google-analytics.com; frame-src https://www.googletagmanager.com https://googleads.g.doubleclick.net" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google-analytics.com https://www.google.co.jp https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.google.com https://googleads.g.doubleclick.net https://analytics.google.com https://fonts.googleapis.com https://fonts.gstatic.com https://region1.google-analytics.com; frame-src https://www.googletagmanager.com https://googleads.g.doubleclick.net" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <title>{title}</title>
@@ -60,11 +60,11 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content="徳丸商会の出張買取LP。名古屋の家電・家具買取、出張費無料。" />
 
-    <!-- Fonts -->
+    <!-- Fonts: 基準書 §3 に準拠し wght 400/700 のみ。Zen Old Mincho 廃止（woff2 60+→約20に削減） -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Old+Mincho:wght@700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -95,13 +95,16 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
       });
     </script>
 
-    <!-- Google Tag Manager (body末尾配置: headのCSS読み込みをブロックしない) -->
+    <!-- Google Tag Manager: 基準書 §3 に準拠し3秒遅延でTBT削減（FCP/LCPに影響させない） -->
     <script is:inline>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-W493L98W');
+      window.dataLayer = window.dataLayer || [];
+      setTimeout(function () {
+        (function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W493L98W');
+      }, 3000);
     </script>
 
     <!-- JSON-LD: body末尾に配置（headのCSS読み込みをブロックしないため） -->
@@ -110,14 +113,26 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
       "@type": "LocalBusiness",
       "@id": `${homeUrl}#localbusiness`,
       "name": company.name,
-      "description": "名古屋市中区を拠点に、出張買取・不用品買取・不用品回収・遺品整理・家じまい・残置物撤去に対応しています。出張費・見積もり・査定費は無料です。",
+      "description": "愛知県名古屋市中村区を拠点に、出張買取・不用品買取・不用品回収・遺品整理・家じまい・残置物撤去に対応。出張費・見積もり・査定費は無料です。古物商許可 " + company.permitNumber + "（" + company.permitAuthority + "）。",
       "telephone": company.phone,
       "url": homeUrl,
       "image": ogImage,
-      "priceRange": "$$",
-      "openingHours": "Mo-Su 09:00-21:00",
-      "address": { "@type": "PostalAddress", "addressLocality": "名古屋市中区", "addressRegion": "愛知県", "addressCountry": "JP" },
-      "geo": { "@type": "GeoCoordinates", "latitude": "35.1709", "longitude": "136.8815" },
+      "priceRange": "¥",
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": company.hoursOpenTime,
+        "closes": company.hoursCloseTime
+      }],
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": company.address.postalCode,
+        "streetAddress": company.address.streetAddress,
+        "addressLocality": company.address.locality,
+        "addressRegion": company.address.region,
+        "addressCountry": company.address.country
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": company.geo.latitude, "longitude": company.geo.longitude },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
@@ -135,11 +150,13 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
         { "@type": "City", "name": "四日市市", "containedInPlace": { "@type": "State", "name": "三重県" } }
       ],
       "sameAs": [company.lineUrl, company.sourceUrl],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "387",
-        "bestRating": "5"
+      "knowsAbout": ["出張買取","不用品回収","遺品整理","家じまい","残置物撤去","家電買取","ブランド品買取","貴金属買取"],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "古物商許可",
+        "identifier": company.permitNumber,
+        "recognizedBy": { "@type": "Organization", "name": company.permitAuthority }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog", "name": "出張買取・片付けサービス",
@@ -155,7 +172,32 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
         ]
       }
     })} />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"徳丸商会","url":"https://www.tokumarushokai.com/","logo":"https://www.tokumarushokai.com/logo.svg","contactPoint":{"@type":"ContactPoint","telephone":"052-990-3968","contactType":"customer service","availableLanguage":"Japanese"}}</script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${homeUrl}#organization`,
+      "name": company.name,
+      "url": homeUrl,
+      "logo": new URL(assetPath("logo.svg"), siteUrl).toString(),
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": company.phone,
+        "contactType": "customer service",
+        "availableLanguage": "Japanese",
+        "areaServed": "JP"
+      }
+    })} />
+    <!-- JSON-LD: WebSite (sub-pageの#website ref参照に使用) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${homeUrl}#website`,
+      "url": homeUrl,
+      "name": "徳丸商会｜名古屋の出張買取・不用品回収",
+      "inLanguage": "ja",
+      "publisher": { "@id": `${homeUrl}#organization` },
+      "about": { "@id": `${homeUrl}#localbusiness` }
+    })} />
     <!-- JSON-LD: BreadcrumbList -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",

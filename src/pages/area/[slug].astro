@@ -1,0 +1,467 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import FloatingCTA from "../../components/FloatingCTA.astro";
+import CTASection from "../../components/CTASection.astro";
+import FAQ from "../../components/FAQ.astro";
+import { areas, getAreaBySlug, regionLabels, type Area } from "../../data/areas";
+import { faqs } from "../../data/faq";
+import { areaPath, areaIndexPath, homePath, basePath, assetPath } from "../../lib/site";
+import { company } from "../../data/company";
+import { competitiveEdges } from "../../data/competitive";
+
+export async function getStaticPaths() {
+  return areas.map((area) => ({
+    params: { slug: area.slug },
+    props: { area },
+  }));
+}
+
+interface Props { area: Area }
+const { area } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const homeUrl = new URL(homePath, siteUrl).toString();
+const areaUrl = new URL(areaPath(area.slug), siteUrl).toString();
+const areaIndexUrl = new URL(areaIndexPath, siteUrl).toString();
+
+const nearbyAreas = area.nearby
+  .map((s) => getAreaBySlug(s))
+  .filter((a): a is Area => Boolean(a));
+
+const titleText = `${area.name}の出張買取・不用品回収｜徳丸商会`;
+const descriptionText = `${area.name}（${area.regionName}）で出張買取・不用品回収・遺品整理なら徳丸商会。最短30分で訪問、出張費・査定費・キャンセル料0円。受付9:00〜21:00 年中無休。古物商許可 ${company.permitNumber}。`;
+
+const bgNagoya = assetPath("images/bg-nagoya.webp");
+const truckLoading = assetPath("images/truck-loading.webp");
+const bgTrust = assetPath("images/bg-trust.webp");
+const bgCash = assetPath("images/bg-cash.webp");
+const bgHappy = assetPath("images/bg-happy.webp");
+
+// 料金プラン（パッケージ）
+const pricingPlans = [
+  { name: "単品回収", price: "1,500", note: "椅子・小型家電など1点から", icon: "M9 11H1l5-7v4h7l-2 7" },
+  { name: "軽トラ1台分", price: "11,000", note: "1K〜1Rの引越し片付けに", icon: "M3 17h2.5l1-3h11l1 3H21V8H3z M5 11h14" },
+  { name: "1tトラック1台分", price: "27,000", note: "1LDK〜2DKに最適", icon: "M3 17h18 M5 17l-2-7h18l-2 7 M7 14h10" },
+  { name: "2tトラック1台分", price: "53,000", note: "戸建て一括・遺品整理に", icon: "M2 17h20 M4 17l-2-9h20l-2 9 M6 13h12" },
+];
+
+// 主要買取相場
+const popularItems = [
+  { name: "冷蔵庫", detail: "500L以上", range: "10,000〜45,000", icon: "M4 2h16v20H4z M4 10h16 M10 6v0 M10 14v0" },
+  { name: "ドラム式洗濯機", detail: "5年以内", range: "8,000〜30,000", icon: "M3 2h18v20H3z M12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z M8 6h0 M16 6h0" },
+  { name: "エアコン", detail: "取外し込み", range: "5,000〜25,000", icon: "M2 4h20v8H2z M6 16v2 M10 16v4 M14 16v2 M18 16v4" },
+  { name: "液晶テレビ", detail: "55インチ", range: "5,000〜20,000", icon: "M2 3h20v14H2z M8 21h8 M12 17v4" },
+  { name: "ブランドバッグ", detail: "ハイブランド", range: "5,000〜500,000", icon: "M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z M3 6h18 M16 10a4 4 0 0 1-8 0" },
+  { name: "高級腕時計", detail: "ロレックス等", range: "10,000〜2,000,000", icon: "M12 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12z M12 9v3l2 2 M9 2h6 M9 22h6" },
+];
+
+// 買取×回収シミュレーション（エリア固有訴求）
+const offsetSim = [
+  {
+    case: `${area.name}・1Kの引越し片付け`,
+    detail: "冷蔵庫＋洗濯機＋電子レンジ＋掃除機＋本棚",
+    pickup: 16500, buyback: 22000, isPlus: true, label: "差額 6,500円受取",
+  },
+  {
+    case: `${area.name}・1LDKの家じまい`,
+    detail: "冷蔵庫＋洗濯機＋ソファ＋ダイニングテーブル＋衣装ケース×3",
+    pickup: 35000, buyback: 18000, isPlus: false, label: "実質負担 17,000円",
+  },
+  {
+    case: `${area.name}・2LDK 引越し一括`,
+    detail: "冷蔵庫×2＋エアコン×2（取外し込）＋大型家具一式",
+    pickup: 70000, buyback: 55000, isPlus: false, label: "実質負担 15,000円",
+  },
+];
+
+// JSON-LD
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org", "@type": "BreadcrumbList",
+  "@id": `${areaUrl}#breadcrumb`,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "徳丸商会トップ", "item": homeUrl },
+    { "@type": "ListItem", "position": 2, "name": "対応エリア一覧", "item": areaIndexUrl },
+    { "@type": "ListItem", "position": 3, "name": area.name, "item": areaUrl },
+  ],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org", "@type": "Service",
+  "@id": `${areaUrl}#service`,
+  "serviceType": "出張買取・不用品回収・遺品整理",
+  "provider": { "@id": `${homeUrl}#localbusiness` },
+  "name": `${area.name}の出張買取・不用品回収`,
+  "description": area.description,
+  "areaServed": {
+    "@type": "Place",
+    "name": area.name,
+    ...(area.geo ? { "geo": { "@type": "GeoCoordinates", "latitude": area.geo.latitude, "longitude": area.geo.longitude } } : {}),
+    "containedInPlace": { "@type": "AdministrativeArea", "name": area.regionName }
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "JPY", "price": "0",
+    "description": "出張費・見積もり・査定費は無料です。"
+  },
+  "url": areaUrl,
+};
+
+const webPageJsonLd = {
+  "@context": "https://schema.org", "@type": "WebPage",
+  "name": titleText, "description": descriptionText, "url": areaUrl,
+  "inLanguage": "ja",
+  "about": { "@id": `${homeUrl}#localbusiness` },
+  "isPartOf": { "@id": `${homeUrl}#website` },
+  "breadcrumb": { "@id": `${areaUrl}#breadcrumb` }
+};
+---
+<Layout title={titleText} description={descriptionText}>
+  <Header />
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav aria-label="パンくず" class="bg-bg-cream border-b border-border text-xs text-text-lighter">
+      <ol class="max-w-5xl mx-auto px-5 py-2 flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+        <li><a href={homePath} class="hover:text-terra transition-colors">トップ</a></li>
+        <li class="text-text-lighter/60">/</li>
+        <li><a href={areaIndexPath} class="hover:text-terra transition-colors">対応エリア</a></li>
+        <li class="text-text-lighter/60">/</li>
+        <li class="text-text font-bold">{area.name}</li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative bg-dark text-white py-14 md:py-24 overflow-hidden">
+      <!-- 名古屋空撮 背景画像（しっかり見える濃度に） -->
+      <img src={bgNagoya} alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async" width="1200" height="800" />
+      <!-- 左濃→右薄のサイドgradientで左テキスト読みやすく、右で画像が見える -->
+      <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-dark/30 md:to-dark/15"></div>
+      <!-- 下からのフェード（CTA行のテキスト可読性補助） -->
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-dark/70 to-transparent"></div>
+      <!-- 装飾: terra/amber グロー -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-terra/40 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-amber/25 rounded-full blur-3xl"></div>
+
+      <div class="relative max-w-5xl mx-auto px-5">
+        <!-- Badges: エリア + キャンペーン -->
+        <div class="reveal reveal-up flex flex-wrap items-center gap-2 mb-5">
+          <span class="inline-flex items-center gap-2 bg-terra/15 border border-terra/30 text-terra-light rounded-full px-3 py-1.5 text-[11px] md:text-sm font-bold">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-terra opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-terra-light"></span>
+            </span>
+            {regionLabels[area.region]}・{area.name} 対応中
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-terra/25 to-amber/25 border border-amber/40 text-amber-light rounded-full px-3 py-1.5 text-[11px] md:text-sm font-bold badge-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-3.5 md:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            <span>キャンペーン中</span>
+            <span class="text-white/40">／</span>
+            <span class="text-gradient font-black">最大5%OFF</span>
+          </span>
+        </div>
+
+        <!-- H1 -->
+        <h1 class="reveal reveal-up font-black mb-5 leading-tight">
+          <span class="block text-base md:text-2xl text-white/70 font-bold mb-2">{area.name}の</span>
+          <span class="block text-3xl md:text-6xl text-gradient">出張買取・不用品回収</span>
+        </h1>
+        <p class="reveal reveal-up text-white/85 text-sm md:text-lg leading-relaxed max-w-3xl mb-7">
+          {area.description}
+        </p>
+
+        <!-- Features (3 chips) -->
+        <ul class="reveal reveal-up flex flex-wrap gap-2 md:gap-3 mb-8">
+          {area.features.map((f) => (
+            <li class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-xs md:text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-terra-light flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-white/95 font-bold">{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- CTA (順序: 電話→LINE Header基準) -->
+        <div class="reveal reveal-up flex flex-col sm:flex-row gap-3 mb-8">
+          <a href="tel:052-990-3968" class="cta-glow inline-flex items-center justify-center gap-2 bg-terra hover:bg-terra-light text-white font-bold text-base md:text-lg px-7 py-3.5 rounded-xl shadow-lg transition-transform hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>電話で相談する</span>
+          </a>
+          <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="cta-glow-line inline-flex items-center justify-center gap-2 bg-line text-white font-bold text-base md:text-lg px-7 py-3.5 rounded-xl shadow-lg transition-transform hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596a.629.629 0 0 1-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595a.63.63 0 0 1 .495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            <span>LINEで無料査定</span>
+          </a>
+        </div>
+
+        <!-- Trust counters (Hero下) -->
+        <div class="reveal reveal-up grid grid-cols-3 gap-3 md:gap-5 max-w-3xl">
+          <div class="bg-white/5 backdrop-blur-sm border border-white/15 rounded-xl px-3 py-3 md:px-4 md:py-4 text-center">
+            <p class="text-2xl md:text-4xl font-black text-gradient leading-none mb-1">¥0</p>
+            <p class="text-[11px] md:text-sm text-white/85 font-bold">出張費・査定費</p>
+            <p class="text-[10px] md:text-xs text-white/45 mt-0.5">見積もりも無料</p>
+          </div>
+          <div class="bg-white/5 backdrop-blur-sm border border-white/15 rounded-xl px-3 py-3 md:px-4 md:py-4 text-center">
+            <p class="text-2xl md:text-4xl font-black text-gradient leading-none mb-1">21<span class="text-base md:text-2xl">時</span></p>
+            <p class="text-[11px] md:text-sm text-white/85 font-bold">まで受付</p>
+            <p class="text-[10px] md:text-xs text-white/45 mt-0.5">9:00–21:00 年中無休</p>
+          </div>
+          <div class="bg-line/15 backdrop-blur-sm border border-line/40 rounded-xl px-3 py-3 md:px-4 md:py-4 text-center relative">
+            <span class="absolute top-1 right-1 bg-line text-white text-[8px] md:text-[9px] font-black px-1.5 py-0.5 rounded-full shadow">NEW</span>
+            <p class="text-2xl md:text-4xl font-black leading-none mb-1 text-line">24<span class="text-base md:text-2xl">h</span></p>
+            <p class="text-[11px] md:text-sm text-white/95 font-bold">LINE受付</p>
+            <p class="text-[10px] md:text-xs text-white/55 mt-0.5">時間外は翌朝対応</p>
+          </div>
+        </div>
+
+        <p class="text-white/40 text-[11px] md:text-xs mt-5">
+          古物商許可 {company.permitNumber}（{company.permitAuthority}届出）
+        </p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-14 md:py-24 bg-bg relative overflow-hidden">
+      <div class="absolute inset-0 dots-pattern opacity-40"></div>
+      <div class="relative max-w-5xl mx-auto px-5">
+        <div class="text-center mb-10 md:mb-14 reveal reveal-up">
+          <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Pricing</p>
+          <h2 class="text-2xl md:text-4xl font-black text-text mb-3">
+            <span class="text-gradient">{area.name}</span>の不用品回収 料金目安
+          </h2>
+          <p class="text-text-light text-sm md:text-base">追加料金なし。買取できる品物は回収費用から相殺できます。</p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 stagger-children">
+          {pricingPlans.map((p) => (
+            <div class="reveal reveal-scale bg-white rounded-2xl border border-border shadow-sm p-5 md:p-6 card-hover relative overflow-hidden">
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-terra to-amber"></div>
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-terra to-amber rounded-xl flex items-center justify-center mb-3 shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={p.icon}/>
+                </svg>
+              </div>
+              <h3 class="text-text font-bold text-sm md:text-base mb-2">{p.name}</h3>
+              <p class="text-terra font-black text-xl md:text-2xl leading-none mb-2">¥{p.price}<span class="text-xs md:text-sm font-bold ml-0.5">〜</span></p>
+              <p class="text-text-lighter text-[11px] md:text-xs leading-relaxed">{p.note}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-text-lighter text-xs mt-6 text-center">
+          ※搬出経路・量・お住まいの階層により金額が前後します。家電リサイクル法対象品も買取成立時はリサイクル料0円。
+        </p>
+      </div>
+    </section>
+
+    <!-- 買取相場 -->
+    <section class="py-14 md:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-5">
+        <div class="text-center mb-10 md:mb-14 reveal reveal-up">
+          <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Buyback</p>
+          <h2 class="text-2xl md:text-4xl font-black text-text mb-3">
+            <span class="text-gradient">{area.name}</span>での買取が多い品目
+          </h2>
+          <p class="text-text-light text-sm md:text-base">買取できる品物は、回収費用から相殺してお得に処分。</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 stagger-children">
+          {popularItems.map((it) => (
+            <div class="reveal reveal-up flex items-center gap-4 bg-bg-warm rounded-xl p-4 md:p-5 border border-border card-hover">
+              <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-terra to-amber flex items-center justify-center shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={it.icon}/>
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-text font-bold text-sm md:text-base">{it.name}</p>
+                <p class="text-text-lighter text-[11px] md:text-xs mb-1">{it.detail}</p>
+                <p class="text-terra font-black text-sm md:text-base">¥{it.range}<span class="text-[11px] font-normal text-text-lighter ml-1">買取目安</span></p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 買取×回収シミュレーション -->
+    <section class="py-14 md:py-24 bg-bg-cream relative overflow-hidden">
+      <img src={bgCash} alt="" class="absolute inset-0 w-full h-full object-cover opacity-15" loading="lazy" decoding="async" width="1200" height="800" />
+      <div class="relative max-w-5xl mx-auto px-5">
+        <div class="text-center mb-10 md:mb-14 reveal reveal-up">
+          <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Simulation</p>
+          <h2 class="text-2xl md:text-4xl font-black text-text mb-3">{area.name}での買取×回収シミュレーション</h2>
+          <p class="text-text-light text-sm md:text-base">処分費を払うのではなく、買取で相殺＝逆にプラスになるケースも。</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 stagger-children">
+          {offsetSim.map((ex) => (
+            <div class={`reveal reveal-up rounded-2xl p-5 md:p-6 border-2 card-hover ${ex.isPlus ? "bg-white border-terra" : "bg-white border-border"}`}>
+              {ex.isPlus && (
+                <span class="inline-block bg-gradient-to-r from-terra to-amber text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full mb-3 badge-pulse">
+                  プラスになるパターン
+                </span>
+              )}
+              <h3 class="font-bold text-text text-sm md:text-base mb-1">{ex.case}</h3>
+              <p class="text-text-lighter text-[11px] md:text-xs leading-relaxed mb-4">{ex.detail}</p>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-text-light">回収費用</span>
+                  <span class="text-text font-bold">{ex.pickup.toLocaleString()}円</span>
+                </div>
+                <div class="flex justify-between text-terra">
+                  <span>買取額</span>
+                  <span class="font-bold">−{ex.buyback.toLocaleString()}円</span>
+                </div>
+                <div class="border-t border-border pt-3 flex justify-between items-baseline">
+                  <span class="text-text font-bold">実質</span>
+                  <span class={`font-black text-lg ${ex.isPlus ? "text-terra" : "text-text"}`}>{ex.label}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-text-lighter text-xs mt-6 text-center">※金額は一例です。お品物の状態・量・年式により異なります。</p>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="relative py-14 md:py-24 overflow-hidden text-white">
+      <img src={truckLoading} alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width="1200" height="800" />
+      <div class="absolute inset-0 bg-dark/85"></div>
+      <div class="relative max-w-5xl mx-auto px-5">
+        <div class="text-center mb-10 md:mb-14 reveal reveal-up">
+          <p class="text-terra-light text-xs font-bold tracking-widest uppercase mb-2">Why Us</p>
+          <h2 class="text-2xl md:text-4xl font-black mb-3">{area.name}で徳丸商会が選ばれる3つの理由</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 stagger-children">
+          <div class="reveal reveal-up bg-white/5 backdrop-blur-sm border border-white/15 rounded-2xl p-6 card-hover">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-terra to-amber flex items-center justify-center mb-4 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3 class="font-black text-lg mb-2">最短30分で訪問</h3>
+            <p class="text-white/75 text-sm leading-relaxed">受付 9:00〜21:00（年中無休）。{area.name}内のご住所なら、ご予約状況に応じて当日訪問も可能です。</p>
+          </div>
+          <div class="reveal reveal-up bg-white/5 backdrop-blur-sm border border-white/15 rounded-2xl p-6 card-hover">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-terra to-amber flex items-center justify-center mb-4 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="font-black text-lg mb-2">買取で処分費を相殺</h3>
+            <p class="text-white/75 text-sm leading-relaxed">出張買取と不用品回収を同時にご相談いただけるので、買取可能な品物の代金を回収費用から差し引いてお得に処分できます。</p>
+          </div>
+          <div class="reveal reveal-up bg-white/5 backdrop-blur-sm border border-white/15 rounded-2xl p-6 card-hover">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-terra to-amber flex items-center justify-center mb-4 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V4l-8-2-8 2v6c0 8 8 12 8 12z"/></svg>
+            </div>
+            <h3 class="font-black text-lg mb-2">古物商許可で安心</h3>
+            <p class="text-white/75 text-sm leading-relaxed">{company.permitAuthority}届出（{company.permitNumber}）。家電リサイクル法・廃棄物処理法に沿って適正に処分します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 競合比較 -->
+    <section class="py-14 md:py-24 bg-bg">
+      <div class="max-w-5xl mx-auto px-5">
+        <div class="text-center mb-10 md:mb-14 reveal reveal-up">
+          <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Comparison</p>
+          <h2 class="text-2xl md:text-4xl font-black text-text mb-3">他社と比べた徳丸商会の優位点</h2>
+          <p class="text-text-light text-sm md:text-base">{area.name}の他社業者と比較した、当社ならではのポイント。</p>
+        </div>
+        <div class="reveal reveal-up bg-white rounded-2xl border border-border shadow-sm overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs md:text-sm border-collapse min-w-[640px]">
+              <thead>
+                <tr class="bg-dark text-white">
+                  <th class="px-3 md:px-5 py-3 text-left">比較項目</th>
+                  <th class="px-3 md:px-5 py-3 text-left bg-terra">徳丸商会</th>
+                  <th class="px-3 md:px-5 py-3 text-left">一般的な他社</th>
+                  <th class="px-3 md:px-5 py-3 text-left">あなたのメリット</th>
+                </tr>
+              </thead>
+              <tbody>
+                {competitiveEdges.map((c, i) => (
+                  <tr class={i % 2 === 0 ? "bg-bg-warm" : "bg-white"}>
+                    <td class="px-3 md:px-5 py-3 font-bold text-text">{c.label}</td>
+                    <td class="px-3 md:px-5 py-3 text-terra font-bold">{c.us}</td>
+                    <td class="px-3 md:px-5 py-3 text-text-light">{c.them}</td>
+                    <td class="px-3 md:px-5 py-3 text-text-light text-[11px] md:text-xs">{c.advantage}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="text-text-lighter text-xs mt-4 text-center">※他社情報は2026年4月時点で公開されている情報を参考にしています。</p>
+      </div>
+    </section>
+
+    <!-- Mid CTA -->
+    <CTASection variant="mid" id={`${area.slug}-cta-mid`} />
+
+    <!-- FAQ -->
+    <FAQ />
+
+    <!-- Nearby areas -->
+    {nearbyAreas.length > 0 && (
+      <section class="py-14 md:py-20 bg-bg-cream">
+        <div class="max-w-5xl mx-auto px-5">
+          <div class="text-center mb-8 md:mb-12 reveal reveal-up">
+            <p class="text-terra text-xs font-bold tracking-widest uppercase mb-2">Nearby</p>
+            <h2 class="text-2xl md:text-3xl font-black text-text mb-3">{area.name}周辺の対応エリア</h2>
+            <p class="text-text-light text-sm">隣接エリアも同じ条件で訪問可能です。</p>
+          </div>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 stagger-children">
+            {nearbyAreas.map((n) => (
+              <li class="reveal reveal-up">
+                <a href={areaPath(n.slug)} class="group flex flex-col h-full bg-white rounded-xl p-4 md:p-5 border border-border card-hover hover:border-terra transition-colors">
+                  <span class="font-bold text-text group-hover:text-terra text-sm md:text-base mb-1.5 transition-colors">{n.name}</span>
+                  <span class="text-text-lighter text-[11px] md:text-xs leading-relaxed">{n.shortDescription}</span>
+                  <span class="mt-3 inline-flex items-center gap-1 text-terra text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                    詳細を見る
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div class="text-center mt-8 reveal reveal-fade">
+            <a href={areaIndexPath} class="inline-flex items-center gap-2 bg-dark hover:bg-dark-light text-white font-bold text-sm md:text-base px-6 py-3 rounded-full shadow-lg transition-colors">
+              <span>すべての対応エリア（27エリア）を見る</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Bottom CTA -->
+    <CTASection variant="bottom" id={`${area.slug}-cta-bottom`} />
+  </main>
+
+  <Footer />
+  <FloatingCTA />
+
+  <!-- reveal observer (is:inline でAstroバンドラをスキップし即時実行) -->
+  <script is:inline>
+    function initReveal() {
+      var els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+      els.forEach(function(el) { observer.observe(el); });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initReveal);
+    } else {
+      initReveal();
+    }
+    window.addEventListener('load', initReveal);
+  </script>
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageJsonLd)} />
+</Layout>

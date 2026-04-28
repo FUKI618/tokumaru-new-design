@@ -7,7 +7,7 @@ import { company } from "../data/company";
     <div class="max-w-3xl mx-auto mb-8 md:mb-12">
       <p class="text-center text-gold font-bold text-sm mb-2">事業者情報</p>
       <h2 class="text-xl md:text-3xl font-bold text-center text-navy mb-3">
-        名古屋市中区の徳丸商会について
+        名古屋市中村区の徳丸商会について
       </h2>
       <p class="text-warm-gray text-sm md:text-base leading-[1.8]">
         出張買取を中心に、不用品回収、遺品整理、残置物撤去までご相談いただける地域密着の事業者です。
@@ -24,7 +24,11 @@ import { company } from "../data/company";
           </div>
           <div>
             <dt class="text-warm-gray-light">所在地</dt>
-            <dd class="text-navy font-bold">{company.locality}</dd>
+            <dd class="text-navy font-bold">{company.fullAddress}</dd>
+          </div>
+          <div>
+            <dt class="text-warm-gray-light">許可元</dt>
+            <dd class="text-navy font-bold">{company.permitAuthority}</dd>
           </div>
           <div>
             <dt class="text-warm-gray-light">対応内容</dt>

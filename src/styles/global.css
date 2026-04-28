@@ -30,6 +30,30 @@
 
   --color-line: #06c755;
   --color-red: #dc3545;
+
+  /* ─── 互換カラー（サブLP命名 → TOPページのテラコッタ系メインカラーに同調） ─── */
+  /* navy: TOPページ Hero 系の深ブラウン dark に揃える */
+  --color-navy: #2c2420;       /* = dark */
+  --color-navy-light: #3e3530;  /* = dark-light */
+  --color-navy-dark: #201a16;   /* = dark-dark */
+
+  /* gold: TOPページのアンバー系（テラコッタ＋アンバーのglow感）に揃える */
+  --color-gold: #e09040;        /* = amber */
+  --color-gold-light: #eca858;  /* = amber-light */
+  --color-gold-dark: #b06820;   /* amberの濃いめ */
+
+  /* cream: TOPページの bg-cream と整合 */
+  --color-cream: #fbf9f6;       /* = bg */
+  --color-cream-dark: #f0e8dc;  /* = bg-cream */
+
+  /* warm-gray: TOPページの text-light / text-lighter と整合 */
+  --color-warm-gray: #5a5048;       /* = text-light */
+  --color-warm-gray-light: #8a8078; /* = text-lighter */
+
+  /* cta: terra と同系統（既存 cta-glow keyframe と整合） */
+  --color-cta: #d45a2a;
+  --color-cta-light: #e47040;
+
   --font-sans: "Noto Sans JP", sans-serif;
 }
 
@@ -50,44 +74,6 @@ body {
 }
 
 ::selection { background-color: rgba(200,80,40,0.15); }
-
-/* ─── Hero Watermark ─── */
-@keyframes logo-drift {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
-}
-.logo-watermark {
-  position: absolute; top: 50%; left: 35%;
-  transform: translate(-50%, -50%);
-  animation: logo-drift 90s linear infinite;
-  pointer-events: none; user-select: none;
-}
-
-/* ─── Floating Particles ─── */
-@keyframes float-up {
-  0%   { transform: translateY(0) scale(1); opacity: 0; }
-  10%  { opacity: 0.5; }
-  90%  { opacity: 0; }
-  100% { transform: translateY(-500px) scale(0.3); opacity: 0; }
-}
-.hero-particles {
-  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
-}
-.hero-particles span {
-  position: absolute; bottom: -20px;
-  width: 5px; height: 5px;
-  background: rgba(200, 80, 40, 0.3);
-  border-radius: 50%;
-  animation: float-up linear infinite;
-}
-.hero-particles span:nth-child(1) { left: 10%; animation-duration: 9s; animation-delay: 0s; width: 4px; height: 4px; }
-.hero-particles span:nth-child(2) { left: 25%; animation-duration: 11s; animation-delay: 1s; width: 7px; height: 7px; }
-.hero-particles span:nth-child(3) { left: 40%; animation-duration: 8s; animation-delay: 2s; }
-.hero-particles span:nth-child(4) { left: 55%; animation-duration: 10s; animation-delay: 0.5s; width: 4px; height: 4px; }
-.hero-particles span:nth-child(5) { left: 70%; animation-duration: 12s; animation-delay: 3s; width: 6px; height: 6px; }
-.hero-particles span:nth-child(6) { left: 85%; animation-duration: 9s; animation-delay: 1.5s; width: 3px; height: 3px; }
-.hero-particles span:nth-child(7) { left: 15%; animation-duration: 13s; animation-delay: 4s; background: rgba(220,140,60,0.2); }
-.hero-particles span:nth-child(8) { left: 60%; animation-duration: 10s; animation-delay: 2.5s; background: rgba(220,140,60,0.2); }
 
 /* ─── Count-up reveal ─── */
 .count-up {
@@ -172,20 +158,6 @@ body {
   background-clip: text;
 }
 
-/* ─── Number shimmer ─── */
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.number-shimmer {
-  background: linear-gradient(90deg, var(--color-terra) 30%, var(--color-amber) 50%, var(--color-terra) 70%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s linear infinite;
-}
-
 /* ─── Badge pulse ─── */
 @keyframes badge-pulse {
   0%, 100% { transform: scale(1); }
@@ -193,27 +165,14 @@ body {
 }
 .badge-pulse { animation: badge-pulse 2s ease-in-out infinite; }
 
-/* ─── Marquee ─── */
-@keyframes marquee-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.floating-marquee {
-  display: flex;
-  animation: marquee-scroll 12s linear infinite;
-}
-
 /* ─── Scrollbar ─── */
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
 /* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
-  .logo-watermark { animation: none; }
   .count-up { opacity: 1; transform: none; transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero-particles span { animation: none; display: none; }
   .cta-glow, .cta-glow-line { animation: none; }
   .badge-pulse { animation: none; }
-  .number-shimmer { animation: none; }
 }

@@ -1,4 +1,6 @@
 ---
+import { homePath } from "../lib/site";
+
 // Social Proof: お客様の声で安心感と行動の正当化
 const testimonials = [
   {
@@ -6,20 +8,48 @@ const testimonials = [
     name: "名古屋市中区 T.S様",
     tag: "引越し",
     stars: 5,
+    datePublished: "2026-03-12",
   },
   {
     text: "LINEで写真を送ったらすぐに概算が出て、翌日には訪問してもらえました。重い冷蔵庫の搬出も手際よくて、お願いして本当によかったです。",
     name: "名古屋市緑区 M.K様",
     tag: "家電買取",
     stars: 5,
+    datePublished: "2026-02-08",
   },
   {
     text: "他社で断られた古い家具も査定してくれて、値段がついたのは驚きでした。スタッフの方も丁寧で、家族にも勧めています。",
     name: "あま市 Y.N様",
     tag: "家具買取",
     stars: 5,
+    datePublished: "2026-01-22",
   },
 ];
+
+// Reviewスキーマ用URL
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const homeUrl = new URL(homePath, siteUrl).toString();
+
+// 個別Reviewスキーマ（aggregateRating不使用＝景表法配慮、個別Reviewのみ出力）
+const reviewsJsonLd = testimonials.map((t, i) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "@id": `${homeUrl}#review-${i + 1}`,
+  "author": { "@type": "Person", "name": t.name },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": String(t.stars),
+    "bestRating": "5",
+    "worstRating": "1",
+  },
+  "reviewBody": t.text,
+  "datePublished": t.datePublished,
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "@id": `${homeUrl}#localbusiness`,
+    "name": "徳丸商会",
+  },
+}));
 ---
 
 <section id="testimonials" class="py-12 md:py-20 bg-white">
@@ -64,21 +94,21 @@ const testimonials = [
       ))}
     </div>
 
-    <!-- Aggregate rating -->
+    <!-- Trust badges: 客観事実ベース -->
     <div class="mt-8 md:mt-10 text-center">
-      <div class="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 bg-gold/5 border border-gold/20 rounded-2xl sm:rounded-full px-5 py-3">
-        <div class="flex gap-0.5">
-          {Array.from({ length: 5 }).map(() => (
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 text-gold" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-          ))}
-        </div>
-        <span class="text-navy font-bold text-sm">お客様満足度 98%<span class="text-warm-gray-light font-normal text-xs ml-1">（自社調べ）</span></span>
+      <div class="inline-flex flex-wrap justify-center items-center gap-2 sm:gap-3 bg-gold/5 border border-gold/20 rounded-2xl px-5 py-3">
+        <span class="text-navy font-bold text-xs sm:text-sm">古物商許可 第541042309800号</span>
+        <span class="text-warm-gray-light text-xs">／</span>
+        <span class="text-navy font-bold text-xs sm:text-sm">出張費・査定費0円</span>
+        <span class="text-warm-gray-light text-xs">／</span>
+        <span class="text-navy font-bold text-xs sm:text-sm">キャンセル料0円</span>
       </div>
       <p class="text-warm-gray-light text-xs mt-3">
-        ※2026年4月時点の自社アンケート集計です。
+        名古屋市公安委員会届出。安心してご相談いただけます。
       </p>
     </div>
   </div>
+
+  <!-- Review JSON-LD（個別レビュー、aggregateRating は景表法配慮で出さない） -->
+  <script type="application/ld+json" set:html={JSON.stringify(reviewsJsonLd)} />
 </section>
