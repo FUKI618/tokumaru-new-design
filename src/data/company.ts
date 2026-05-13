@@ -4,7 +4,7 @@ export const company = {
   hours: "9:00〜21:00（年中無休）",
   hoursOpenTime: "09:00",
   hoursCloseTime: "21:00",
-  permitNumber: "第541042309800号",
+  permitNumber: "第541052601400号",
   permitAuthority: "名古屋市公安委員会",
   lineUrl: "https://lin.ee/j4wK9IM",
   sourceUrl: "https://www.zehitomo.com/profile/%E5%BE%B3%E4%B8%B8%E5%95%86%E4%BC%9A-Md4lLXjk6/pro",
@@ -60,6 +60,6 @@ export const company = {
     { label: "スピード", value: "最短30分、当日〜翌日対応のご相談可" },
     { label: "相談方法", value: "電話・LINEで受付" },
     { label: "対応エリア", value: "名古屋市全域と近郊エリア" },
-    { label: "古物商許可", value: "第541042309800号（名古屋市公安委員会）" },
+    { label: "古物商許可", value: "第541052601400号（名古屋市公安委員会）" },
   ],
 } as const;

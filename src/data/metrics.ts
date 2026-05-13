@@ -22,7 +22,7 @@ export const metrics = {
   seniorDiscount: 0.05, // ご高齢者(65歳以上)5%OFF
   lineEstimateDiscount: 0.05, // LINE見積5%OFF
   // 法的根拠
-  permitNumber: "第541042309800号",
+  permitNumber: "第541052601400号",
   permitAuthority: "名古屋市公安委員会",
 } as const;
 
