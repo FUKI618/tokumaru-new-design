@@ -67,9 +67,9 @@ export const areas: Area[] = [
   },
   {
     slug: "nakamura", name: "中村区", region: "nagoya", regionName: "名古屋市",
-    description: "中村区は徳丸商会の本拠地（〒453-0863 横井2丁目71番地）。名古屋駅周辺・太閤通・本陣エリアの出張買取・不用品回収を最短30分で訪問対応します。",
-    shortDescription: "本拠地・名古屋駅周辺即対応",
-    features: ["徳丸商会の本拠地","名古屋駅周辺最速訪問","駅近マンション対応"],
+    description: "中村区は徳丸商会の本拠地（〒453-0863 横井2丁目71番地）。横井・烏森・亀島・大宮町・名駅・太閤通・本陣・中村公園エリアでの出張買取・不用品回収を【最短15分・本拠地直行】で訪問対応。中村区内のご依頼は他区より優先して即日駆けつけます。",
+    shortDescription: "本拠地・中村区内最短15分",
+    features: ["中村区横井から本拠地直行","名駅・亀島エリア最短15分","中村区内 優先即日対応"],
     geo: { latitude: 35.1716, longitude: 136.8636 },
     nearby: ["nishi","naka","nakagawa","atsuta"],
   },
@@ -209,6 +209,14 @@ export const areas: Area[] = [
     features: ["三重方面も対応","弥富駅近く即日訪問","大量品もトラック対応"],
     geo: { latitude: 35.0962, longitude: 136.7233 },
     nearby: ["tsushima","aisai","yokkaichi","ama"],
+  },
+  {
+    slug: "kasugai", name: "春日井市", region: "owari", regionName: "尾張地区",
+    description: "春日井市での出張買取・不用品回収。勝川・春日井駅・高蔵寺・神領エリアの戸建て・マンションで家電・家具の買取と一括処分にワンストップ対応。名古屋市北東部からの即日訪問が可能です。",
+    shortDescription: "勝川・春日井駅・高蔵寺エリア対応",
+    features: ["名古屋から即日訪問","戸建て一括片付け","古道具・倉庫品も査定"],
+    geo: { latitude: 35.2475, longitude: 136.9722 },
+    nearby: ["moriyama","kita","kitanagoya","obu"],
   },
   // ─────────── 知多地区 ───────────
   {
