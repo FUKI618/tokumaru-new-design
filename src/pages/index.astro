@@ -238,35 +238,43 @@ const reviewsJsonLd = voices.map((v, i) => ({
     </div>
   </div>
 </div>
-</section><!-- ═══ 買取相場（comp-P/Q・DESIGN-SYSTEM準拠） ═══ --><section class="bg-white border-b border-border">
-  <div class="md:hidden @container px-[4.1cqw] pt-[10.2cqw] pb-[10.2cqw] text-center">
+</section><!-- ═══ 買取相場（comp-T/U リッチ版・承認済み） ═══ --><section class="relative bg-bg-cream border-b border-border overflow-hidden">
+  <img src={brandSeal} alt="" aria-hidden="true" class="absolute -top-[4%] -right-[6%] w-[34%] opacity-[0.05] pointer-events-none select-none" loading="lazy" width="320" height="320" />
+  <div class="md:hidden @container relative px-[4.1cqw] pt-[10.2cqw] pb-[10.2cqw] text-center">
     <p class="text-terra text-[3cqw] font-bold tracking-widest uppercase">Price</p>
     <h2 class="text-text text-[5.6cqw] font-black mt-[1.5cqw]">名古屋の家電・家具 <span class="text-terra">買取相場</span></h2>
-    <p class="text-text-light text-[3.3cqw] mt-[1.5cqw]">実際の買取実績の一例です</p>
-    <div class="grid grid-cols-2 gap-[3cqw] mt-[5cqw]">
-        <div class="relative bg-white rounded-[4.1cqw] border-2 border-terra shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[4.1cqw] text-center mt-[2.4cqw]"><span class="absolute -top-[2.2cqw] left-1/2 -translate-x-1/2 bg-terra text-white text-[2.2cqw] font-bold px-[2.6cqw] py-[0.6cqw] rounded-full whitespace-nowrap">高価買取例</span>
-          <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の買取" width="300" height="225" loading="lazy" class="w-full h-[20cqw] object-contain" />
-          <p class="text-text-lighter text-[2.6cqw] leading-tight mt-[2cqw]">大型500L以上</p>
-          <p class="text-text font-bold text-[3.6cqw] leading-tight mt-[0.6cqw]">冷蔵庫</p>
-          <p class="text-terra font-black text-[5.4cqw] leading-none mt-[1.6cqw]">¥39,000<span class="text-[3cqw]">〜</span></p>
+    <span class="block w-[12cqw] h-[0.6cqw] bg-[#b08d3f] mx-auto mt-[2cqw]"></span>
+    <p class="text-text-light text-[3.3cqw] mt-[2cqw]">実際の買取実績の一例です</p>
+    <div class="relative bg-white rounded-[4.6cqw] border-2 border-terra shadow-[0_6px_24px_rgba(44,36,32,0.12)] mt-[5cqw] pt-[6cqw] pb-[5cqw] px-[4.1cqw] overflow-hidden">
+      <span class="absolute -left-[10cqw] top-[5cqw] -rotate-[38deg] bg-gradient-to-r from-terra to-amber text-white text-[2.7cqw] font-bold px-[12cqw] py-[1cqw] shadow-md">高価買取例</span>
+      <div class="flex items-center gap-[4cqw]">
+        <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の買取" width="300" height="300" loading="lazy" class="w-[30cqw] h-[34cqw] object-contain flex-shrink-0" />
+        <div class="text-left">
+          <p class="text-text-lighter text-[2.9cqw]">大型500L以上</p>
+          <p class="text-text font-black text-[5.6cqw] leading-tight mt-[0.6cqw]">冷蔵庫</p>
+          <p class="text-terra font-black text-[9.2cqw] leading-none mt-[2cqw]">¥39,000<span class="text-[4.6cqw]">〜</span></p>
+          <span class="block w-[16cqw] h-[0.55cqw] bg-[#b08d3f] mt-[1.6cqw]"></span>
         </div>
-        <div class="relative bg-white rounded-[4.1cqw] border border-border shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[4.1cqw] text-center">
-          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の買取" width="300" height="225" loading="lazy" class="w-full h-[20cqw] object-contain" />
-          <p class="text-text-lighter text-[2.6cqw] leading-tight mt-[2cqw]">ドラム式</p>
-          <p class="text-text font-bold text-[3.6cqw] leading-tight mt-[0.6cqw]">洗濯機</p>
-          <p class="text-terra font-black text-[5.4cqw] leading-none mt-[1.6cqw]">¥24,500<span class="text-[3cqw]">〜</span></p>
+      </div>
+    </div>
+    <div class="bg-white rounded-[4.1cqw] border border-border shadow-[0_3px_14px_rgba(44,36,32,0.08)] mt-[3.4cqw] px-[4.1cqw] py-[1.4cqw]">
+        <div class="flex items-center gap-[3cqw] py-[2.8cqw] border-b border-[#b08d3f]/25 last:border-b-0">
+          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の買取" width="200" height="150" loading="lazy" class="w-[14cqw] h-[11cqw] object-contain flex-shrink-0" />
+          <div class="text-left flex-1"><p class="text-text-lighter text-[2.5cqw] leading-tight">ドラム式</p>
+          <p class="text-text font-bold text-[3.4cqw] leading-tight mt-[0.4cqw]">洗濯機</p></div>
+          <p class="text-terra font-black text-[5cqw] leading-none whitespace-nowrap">¥24,500<span class="text-[2.8cqw]">〜</span></p>
         </div>
-        <div class="relative bg-white rounded-[4.1cqw] border border-border shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[4.1cqw] text-center">
-          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの買取" width="300" height="225" loading="lazy" class="w-full h-[20cqw] object-contain" />
-          <p class="text-text-lighter text-[2.6cqw] leading-tight mt-[2cqw]">取外し込み</p>
-          <p class="text-text font-bold text-[3.6cqw] leading-tight mt-[0.6cqw]">エアコン</p>
-          <p class="text-terra font-black text-[5.4cqw] leading-none mt-[1.6cqw]">¥21,000<span class="text-[3cqw]">〜</span></p>
+        <div class="flex items-center gap-[3cqw] py-[2.8cqw] border-b border-[#b08d3f]/25 last:border-b-0">
+          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの買取" width="200" height="150" loading="lazy" class="w-[14cqw] h-[11cqw] object-contain flex-shrink-0" />
+          <div class="text-left flex-1"><p class="text-text-lighter text-[2.5cqw] leading-tight">取外し込み</p>
+          <p class="text-text font-bold text-[3.4cqw] leading-tight mt-[0.4cqw]">エアコン</p></div>
+          <p class="text-terra font-black text-[5cqw] leading-none whitespace-nowrap">¥21,000<span class="text-[2.8cqw]">〜</span></p>
         </div>
-        <div class="relative bg-white rounded-[4.1cqw] border border-border shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[4.1cqw] text-center">
-          <img src={assetPath("images/items/tv.webp")} alt="テレビの買取" width="300" height="225" loading="lazy" class="w-full h-[20cqw] object-contain" />
-          <p class="text-text-lighter text-[2.6cqw] leading-tight mt-[2cqw]">55インチ</p>
-          <p class="text-text font-bold text-[3.6cqw] leading-tight mt-[0.6cqw]">テレビ</p>
-          <p class="text-terra font-black text-[5.4cqw] leading-none mt-[1.6cqw]">¥17,000<span class="text-[3cqw]">〜</span></p>
+        <div class="flex items-center gap-[3cqw] py-[2.8cqw] border-b border-[#b08d3f]/25 last:border-b-0">
+          <img src={assetPath("images/items/tv.webp")} alt="テレビの買取" width="200" height="150" loading="lazy" class="w-[14cqw] h-[11cqw] object-contain flex-shrink-0" />
+          <div class="text-left flex-1"><p class="text-text-lighter text-[2.5cqw] leading-tight">55インチ</p>
+          <p class="text-text font-bold text-[3.4cqw] leading-tight mt-[0.4cqw]">テレビ</p></div>
+          <p class="text-terra font-black text-[5cqw] leading-none whitespace-nowrap">¥17,000<span class="text-[2.8cqw]">〜</span></p>
         </div>
     </div>
     <p class="text-text-light text-[2.8cqw] leading-relaxed mt-[4.1cqw]">※年式・状態・サイズで変動します。<b>LINEに写真を送れば平均3分で概算回答。</b></p>
@@ -280,35 +288,40 @@ const reviewsJsonLd = voices.map((v, i) => ({
     </a>
     <a href="https://lin.ee/j4wK9IM" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-[2cqw] bg-[#3eb168] text-white font-bold text-[3.6cqw] min-h-[11.3cqw] rounded-[3cqw] shadow-sm mt-[3cqw]"><svg xmlns="http://www.w3.org/2000/svg" class="w-[4.6cqw] h-[4.6cqw]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINEで写真査定（24h）</a>
   </div>
-  <div class="hidden md:block mx-auto max-w-[1536px] @container pt-[3.65cqw] pb-[3.65cqw] text-center">
+  <div class="hidden md:block mx-auto max-w-[1536px] @container relative pt-[3.65cqw] pb-[3.65cqw] text-center">
     <p class="text-terra text-[0.78cqw] font-bold tracking-widest uppercase">Price</p>
     <h2 class="text-text text-[2.21cqw] font-black mt-[0.6cqw]">名古屋の家電・家具 <span class="text-terra">買取相場</span></h2>
-    <p class="text-text-light text-[0.98cqw] mt-[0.6cqw]">実際の買取実績の一例です</p>
-    <div class="grid grid-cols-4 gap-[1.3cqw] mt-[2.1cqw] mx-auto w-[71.6cqw]">
-        <div class="relative bg-white rounded-[1.05cqw] border-2 border-terra shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[1.56cqw] text-center"><span class="absolute -top-[0.85cqw] left-1/2 -translate-x-1/2 bg-terra text-white text-[0.8cqw] font-bold px-[1cqw] py-[0.25cqw] rounded-full whitespace-nowrap">高価買取例</span>
-          <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の買取" width="300" height="225" loading="lazy" class="w-full h-[8.5cqw] object-contain" />
-          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.8cqw]">大型500L以上</p>
-          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.2cqw]">冷蔵庫</p>
-          <p class="text-terra font-black text-[2.2cqw] leading-none mt-[0.7cqw]">¥39,000<span class="text-[1.2cqw]">〜</span></p>
+    <span class="block w-[4cqw] h-[0.2cqw] bg-[#b08d3f] mx-auto mt-[0.8cqw]"></span>
+    <p class="text-text-light text-[0.98cqw] mt-[0.8cqw]">実際の買取実績の一例です</p>
+    <div class="flex gap-[1.6cqw] mt-[2.1cqw] mx-auto w-[71.6cqw] items-stretch">
+      <div class="relative bg-white rounded-[1.3cqw] border-2 border-terra shadow-[0_8px_28px_rgba(44,36,32,0.13)] w-[28cqw] flex-shrink-0 pt-[2.6cqw] pb-[2cqw] px-[1.6cqw] overflow-hidden">
+        <span class="absolute -left-[3.6cqw] top-[1.7cqw] -rotate-[38deg] bg-gradient-to-r from-terra to-amber text-white text-[0.85cqw] font-bold px-[4.2cqw] py-[0.34cqw] shadow-md">高価買取例</span>
+        <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の買取" width="300" height="300" loading="lazy" class="w-full h-[12cqw] object-contain" />
+        <p class="text-text-lighter text-[0.95cqw] mt-[1cqw]">大型500L以上</p>
+        <p class="text-text font-black text-[1.8cqw] leading-tight mt-[0.2cqw]">冷蔵庫</p>
+        <p class="text-terra font-black text-[3.1cqw] leading-none mt-[0.7cqw]">¥39,000<span class="text-[1.6cqw]">〜</span></p>
+        <span class="block w-[5.5cqw] h-[0.18cqw] bg-[#b08d3f] mx-auto mt-[0.7cqw]"></span>
+      </div>
+      <div class="bg-white rounded-[1.3cqw] border border-border shadow-[0_4px_18px_rgba(44,36,32,0.08)] flex-1 px-[1.8cqw] py-[1cqw] flex flex-col justify-center">
+        <div class="flex items-center gap-[1.3cqw] py-[1.2cqw] border-b border-[#b08d3f]/25 last:border-b-0">
+          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の買取" width="200" height="150" loading="lazy" class="w-[5.8cqw] h-[4.4cqw] object-contain flex-shrink-0" />
+          <div class="text-left flex-1"><p class="text-text-lighter text-[0.85cqw] leading-tight">ドラム式</p>
+          <p class="text-text font-bold text-[1.25cqw] leading-tight mt-[0.15cqw]">洗濯機</p></div>
+          <p class="text-terra font-black text-[2.1cqw] leading-none whitespace-nowrap">¥24,500<span class="text-[1.15cqw]">〜</span></p>
         </div>
-        <div class="relative bg-white rounded-[1.05cqw] border border-border shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[1.56cqw] text-center">
-          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の買取" width="300" height="225" loading="lazy" class="w-full h-[8.5cqw] object-contain" />
-          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.8cqw]">ドラム式</p>
-          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.2cqw]">洗濯機</p>
-          <p class="text-terra font-black text-[2.2cqw] leading-none mt-[0.7cqw]">¥24,500<span class="text-[1.2cqw]">〜</span></p>
+        <div class="flex items-center gap-[1.3cqw] py-[1.2cqw] border-b border-[#b08d3f]/25 last:border-b-0">
+          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの買取" width="200" height="150" loading="lazy" class="w-[5.8cqw] h-[4.4cqw] object-contain flex-shrink-0" />
+          <div class="text-left flex-1"><p class="text-text-lighter text-[0.85cqw] leading-tight">取外し込み</p>
+          <p class="text-text font-bold text-[1.25cqw] leading-tight mt-[0.15cqw]">エアコン</p></div>
+          <p class="text-terra font-black text-[2.1cqw] leading-none whitespace-nowrap">¥21,000<span class="text-[1.15cqw]">〜</span></p>
         </div>
-        <div class="relative bg-white rounded-[1.05cqw] border border-border shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[1.56cqw] text-center">
-          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの買取" width="300" height="225" loading="lazy" class="w-full h-[8.5cqw] object-contain" />
-          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.8cqw]">取外し込み</p>
-          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.2cqw]">エアコン</p>
-          <p class="text-terra font-black text-[2.2cqw] leading-none mt-[0.7cqw]">¥21,000<span class="text-[1.2cqw]">〜</span></p>
+        <div class="flex items-center gap-[1.3cqw] py-[1.2cqw] border-b border-[#b08d3f]/25 last:border-b-0">
+          <img src={assetPath("images/items/tv.webp")} alt="テレビの買取" width="200" height="150" loading="lazy" class="w-[5.8cqw] h-[4.4cqw] object-contain flex-shrink-0" />
+          <div class="text-left flex-1"><p class="text-text-lighter text-[0.85cqw] leading-tight">55インチ</p>
+          <p class="text-text font-bold text-[1.25cqw] leading-tight mt-[0.15cqw]">テレビ</p></div>
+          <p class="text-terra font-black text-[2.1cqw] leading-none whitespace-nowrap">¥17,000<span class="text-[1.15cqw]">〜</span></p>
         </div>
-        <div class="relative bg-white rounded-[1.05cqw] border border-border shadow-[0_1px_2px_rgba(44,36,32,0.06)] p-[1.56cqw] text-center">
-          <img src={assetPath("images/items/tv.webp")} alt="テレビの買取" width="300" height="225" loading="lazy" class="w-full h-[8.5cqw] object-contain" />
-          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.8cqw]">55インチ</p>
-          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.2cqw]">テレビ</p>
-          <p class="text-terra font-black text-[2.2cqw] leading-none mt-[0.7cqw]">¥17,000<span class="text-[1.2cqw]">〜</span></p>
-        </div>
+      </div>
     </div>
     <p class="text-text-light text-[0.9cqw] mt-[1.56cqw]">※年式・状態・サイズで変動します。<b>LINEに写真を送れば平均3分で概算回答。</b>まずはお気軽にどうぞ。</p>
     <div class="flex items-center justify-center gap-[1.3cqw] mt-[1.56cqw]">
