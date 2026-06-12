@@ -566,127 +566,122 @@ const reviewsJsonLd = voices.map((v, i) => ({
       <a href="tel:052-990-3968" class="cta-glow relative inline-flex items-center gap-[0.7cqw] bg-gradient-to-b from-[#e25a20] to-[#c04420] text-white font-black text-[1.2cqw] pl-[2cqw] pr-[3.2cqw] py-[1.05cqw] rounded-[0.7cqw] shadow-lg flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-[1.4cqw] h-[1.4cqw]" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>電話で今すぐ査定<svg xmlns="http://www.w3.org/2000/svg" class="absolute right-[1.1cqw] top-1/2 -translate-y-1/2 w-[1cqw] h-[1cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg></a>
     </div>
   </div>
-</section><!-- ═══ 買取品目（comp-F/G） ═══ --><section id="items" class="bg-bg-cream border-b border-border">
-  <div class="md:hidden @container px-[3.6cqw] pt-[4.5cqw] pb-[5cqw] text-center">
-    <p class="text-terra text-[2.3cqw] font-bold tracking-widest uppercase">Items</p>
-    <h2 class="text-text text-[4.4cqw] font-black mt-[1cqw]">出張買取の対応アイテム</h2>
-    <div class="grid grid-cols-4 gap-[1.8cqw] mt-[3cqw]">
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">冷蔵庫</p>
+</section><!-- ═══ 買取品目（comp-F/G 100%: フラット罫線グリッド・白地浮かせ） ═══ --><section id="items" class="bg-bg-cream border-b border-border">
+  <div class="md:hidden @container px-[3.6cqw] pt-[5.5cqw] pb-[6cqw] text-center">
+    <p class="text-terra text-[2.6cqw] font-bold tracking-[0.3em] uppercase">Items</p>
+    <h2 class="text-text text-[4.8cqw] font-black mt-[1cqw]">出張買取の対応アイテム</h2>
+    <div class="grid grid-cols-4 gap-[1px] bg-[#e5e0d8] border border-[#e5e0d8] rounded-[1.2cqw] overflow-hidden mt-[3.4cqw]">
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">冷蔵庫</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">洗濯機</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">洗濯機</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">エアコン</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">エアコン</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/tv.webp")} alt="テレビの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">テレビ</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/tv.webp")} alt="テレビの出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">テレビ</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/watch.webp")} alt="腕時計の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">腕時計</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/watch.webp")} alt="腕時計の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">腕時計</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/brand-bag.webp")} alt="ブランド品の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">ブランド品</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/brand-bag.webp")} alt="ブランド品の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">ブランド品</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/gold.webp")} alt="金・プラチナの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">金・プラチナ</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/gold-white.webp")} alt="金・プラチナの出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">金・プラチナ</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/game.webp")} alt="ゲーム機の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">ゲーム機</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/game-white.webp")} alt="ゲーム機の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">ゲーム機</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/instrument.webp")} alt="楽器の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">楽器</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/instrument.webp")} alt="楽器の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">楽器</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/microwave.webp")} alt="電子レンジの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">電子レンジ</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/microwave.webp")} alt="電子レンジの出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">電子レンジ</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/perfume.webp")} alt="香水の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">香水</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/perfume.webp")} alt="香水の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">香水</p>
         </div>
-        <div class="bg-white rounded-[2cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/furniture.webp")} alt="高級家具の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[2.2cqw] py-[1.3cqw] leading-tight whitespace-nowrap">高級家具</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[2.6cqw] pb-[2cqw] px-[1cqw]">
+          <img src={assetPath("images/items/furniture.webp")} alt="高級家具の出張買取" class="w-full h-[13cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[2.3cqw] leading-tight whitespace-nowrap mt-[1.6cqw]">高級家具</p>
         </div>
     </div>
-    <div class="bg-gradient-to-r from-terra/10 via-amber/10 to-terra/10 border border-terra/25 rounded-[2.4cqw] px-[3cqw] py-[2.6cqw] mt-[3.4cqw] flex items-center gap-[2.4cqw] text-left">
-      <span class="flex-shrink-0 w-[7.5cqw] h-[7.5cqw] rounded-full bg-gradient-to-br from-terra to-terra-light flex items-center justify-center shadow-md text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[4cqw] h-[4cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <p class="text-text font-black text-[2.9cqw] leading-snug">動かない家電・古い家具・型落ち品もOK</p>
+    <div class="flex items-center justify-center gap-[2cqw] bg-white border border-terra/50 rounded-[1.6cqw] py-[2.6cqw] px-[2cqw] mt-[3cqw]">
+      <span class="flex items-center justify-center w-[5.6cqw] h-[5.6cqw] rounded-full bg-gradient-to-br from-amber to-terra text-white flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="w-[3.2cqw] h-[3.2cqw]"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span class="text-terra font-bold text-[3.3cqw]">動かない家電・古い家具・型落ち品もOK</span>
     </div>
   </div>
-  <div class="hidden md:block mx-auto max-w-[1536px] @container pt-[2cqw] pb-[2.6cqw] text-center">
-    <p class="text-terra text-[0.85cqw] font-bold tracking-widest uppercase">Items</p>
-    <h2 class="text-text text-[2.2cqw] font-black mt-[0.4cqw]">出張買取の対応アイテム</h2>
-    <p class="text-text-light text-[1cqw] mt-[0.4cqw]">名古屋でご相談の多い品目を幅広く買取しています</p>
-    <div class="grid grid-cols-6 gap-[1cqw] mt-[1.5cqw] mx-auto w-[83cqw]">
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">冷蔵庫</p>
+  <div class="hidden md:block mx-auto max-w-[1536px] @container pt-[2.2cqw] pb-[2.6cqw] text-center">
+    <p class="text-terra text-[0.95cqw] font-bold tracking-[0.3em] uppercase">Items</p>
+    <h2 class="text-text text-[2.4cqw] font-black mt-[0.5cqw]">出張買取の対応アイテム</h2>
+    <div class="grid grid-cols-4 gap-[1px] bg-[#e5e0d8] border border-[#e5e0d8] rounded-[0.5cqw] overflow-hidden mx-auto w-[71.6cqw] mt-[1.6cqw]">
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/refrigerator.webp")} alt="冷蔵庫の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">冷蔵庫</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">洗濯機</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/washing-machine.webp")} alt="洗濯機の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">洗濯機</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">エアコン</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/aircon.webp")} alt="エアコンの出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">エアコン</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/tv.webp")} alt="テレビの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">テレビ</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/tv.webp")} alt="テレビの出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">テレビ</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/watch.webp")} alt="腕時計の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">腕時計</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/watch.webp")} alt="腕時計の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">腕時計</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/brand-bag.webp")} alt="ブランド品の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">ブランド品</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/brand-bag.webp")} alt="ブランド品の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">ブランド品</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/gold.webp")} alt="金・プラチナの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">金・プラチナ</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/gold-white.webp")} alt="金・プラチナの出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">金・プラチナ</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/game.webp")} alt="ゲーム機の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">ゲーム機</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/game-white.webp")} alt="ゲーム機の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">ゲーム機</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/instrument.webp")} alt="楽器の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">楽器</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/instrument.webp")} alt="楽器の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">楽器</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/microwave.webp")} alt="電子レンジの出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">電子レンジ</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/microwave.webp")} alt="電子レンジの出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">電子レンジ</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/perfume.webp")} alt="香水の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">香水</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/perfume.webp")} alt="香水の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">香水</p>
         </div>
-        <div class="bg-white rounded-[0.8cqw] overflow-hidden border border-border shadow-sm text-center">
-          <img src={assetPath("images/items/furniture.webp")} alt="高級家具の出張買取" class="w-full aspect-square object-cover" loading="lazy" width="600" height="600" />
-          <p class="text-text font-bold text-[0.95cqw] py-[0.55cqw] leading-tight whitespace-nowrap">高級家具</p>
+        <div class="bg-white flex flex-col items-center justify-center pt-[1.3cqw] pb-[1cqw] px-[0.6cqw]">
+          <img src={assetPath("images/items/furniture.webp")} alt="高級家具の出張買取" class="w-full h-[5.6cqw] object-contain mix-blend-multiply" loading="lazy" width="600" height="600" />
+          <p class="text-text font-bold text-[0.95cqw] leading-tight whitespace-nowrap mt-[0.8cqw]">高級家具</p>
         </div>
     </div>
-    <div class="bg-gradient-to-r from-terra/10 via-amber/10 to-terra/10 border border-terra/25 rounded-[1.1cqw] px-[1.8cqw] py-[1.3cqw] mt-[1.6cqw] mx-auto w-[62cqw] flex items-start gap-[1.1cqw] text-left">
-      <span class="flex-shrink-0 w-[2.8cqw] h-[2.8cqw] rounded-full bg-gradient-to-br from-terra to-terra-light flex items-center justify-center shadow-md text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[1.5cqw] h-[1.5cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <div>
-        <p class="text-text font-black text-[1.2cqw] leading-snug">動かない家電・古い家具・型落ち品もOK</p>
-        <p class="text-text-light text-[0.92cqw] leading-relaxed mt-[0.3cqw]">「もう値がつかないだろう」と思うお品物こそ一度ご相談ください。独自販路で値段をつけられるケースが多数あります。買取できないお品物も、回収費用から相殺できる場合があります。</p>
-      </div>
+    <div class="flex items-center justify-center gap-[0.9cqw] bg-white border border-terra/50 rounded-[0.6cqw] py-[1cqw] px-[1cqw] mx-auto w-[71.6cqw] mt-[1.2cqw]">
+      <span class="flex items-center justify-center w-[2cqw] h-[2cqw] rounded-full bg-gradient-to-br from-amber to-terra text-white flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="w-[1.15cqw] h-[1.15cqw]"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <span class="text-terra font-bold text-[1.25cqw]">動かない家電・古い家具・型落ち品もOK</span>
     </div>
-    <p class="text-text-lighter text-[0.85cqw] mt-[1.2cqw]">※上記以外のリサイクル・中古品もお気軽にご相談ください</p>
   </div>
 </section><!-- ═══ こんなご依頼も承ります（comp-L/M） ═══ --><section id="scenarios" class="bg-white border-b border-border">
   <div class="md:hidden @container px-[3.6cqw] pt-[4.5cqw] pb-[5cqw] text-center">
