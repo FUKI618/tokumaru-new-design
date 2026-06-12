@@ -367,100 +367,87 @@ const reviewsJsonLd = voices.map((v, i) => ({
     <a href="#campaign-detail" class="border border-white/75 text-white rounded-full text-[1cqw] font-bold px-[1.5cqw] py-[0.65cqw] hover:bg-white/10 transition-colors">詳しく見る ▾</a>
   </div></div>
   <p class="md:hidden relative text-center text-white/90 text-[11px] pb-2">↓ 下に詳細あり ／ 併用不可</p>
-</section><!-- ═══ 信頼バー（comp-D/E） ═══ --><section class="bg-bg-cream border-b border-border">
-  <!-- モバイル -->
-  <div class="md:hidden @container px-[3.6cqw] pt-[3.5cqw] pb-[4.5cqw]">
-    <div class="grid grid-cols-2 gap-[2cqw]">
-        <div class="relative bg-white rounded-[2.2cqw] border border-border shadow-md p-[2.3cqw] text-center">
-          <span class="inline-flex items-center justify-center w-[6.2cqw] h-[6.2cqw] rounded-[1.4cqw] bg-terra text-white font-black text-[4cqw]">¥</span>
-          <p class="text-terra text-[4.4cqw] font-black leading-tight mt-[0.9cqw]">¥0</p>
-          <p class="text-text text-[2.5cqw] font-bold leading-tight mt-[0.6cqw]">出張費・査定費</p>
-          <p class="text-text-lighter text-[1.8cqw] leading-tight mt-[0.6cqw]">見積もり・キャンセル0円</p>
+</section><!-- ═══ 信頼バー（comp-AA/AB 数字バー型） ═══ --><section class="bg-white border-b border-border">
+  <div class="md:hidden @container px-[4.1cqw] pt-[7cqw] pb-[8cqw] text-center">
+    <div class="grid grid-cols-2 [&>*:nth-child(odd)]:border-r [&>*:nth-child(-n+2)]:border-b [&>*]:border-border">
+        <div class="relative py-[4.5cqw] px-[1cqw]">
+          <p class="text-terra font-black text-[8.2cqw] leading-none">¥0</p>
+          <p class="text-text font-bold text-[3.1cqw] leading-tight mt-[1.5cqw]">出張費・査定費</p>
+          <p class="text-text-lighter text-[2.2cqw] leading-tight mt-[0.8cqw]">見積もり・キャンセル0円</p>
         </div>
-        <div class="relative bg-white rounded-[2.2cqw] border border-border shadow-md p-[2.3cqw] text-center">
-          <span class="inline-flex items-center justify-center w-[6.2cqw] h-[6.2cqw] rounded-[1.4cqw] bg-terra text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[4.6cqw] h-[4.6cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <p class="text-terra text-[4.4cqw] font-black leading-tight mt-[0.9cqw]">21時</p>
-          <p class="text-text text-[2.5cqw] font-bold leading-tight mt-[0.6cqw]">電話受付</p>
-          <p class="text-text-lighter text-[1.8cqw] leading-tight mt-[0.6cqw]">9:00-21:00 年中無休</p>
+        <div class="relative py-[4.5cqw] px-[1cqw]">
+          <p class="text-terra font-black text-[8.2cqw] leading-none">21時</p>
+          <p class="text-text font-bold text-[3.1cqw] leading-tight mt-[1.5cqw]">電話受付</p>
+          <p class="text-text-lighter text-[2.2cqw] leading-tight mt-[0.8cqw]">9:00-21:00 年中無休</p>
         </div>
-        <div class="relative bg-white rounded-[2.2cqw] border border-line/50 shadow-md p-[2.3cqw] text-center"><span class="absolute top-[1.6cqw] right-[1.6cqw] bg-line text-white text-[1.9cqw] font-black px-[1.5cqw] py-[0.4cqw] rounded-full">NEW</span>
-          <span class="inline-flex items-center justify-center w-[6.2cqw] h-[6.2cqw] rounded-[1.4cqw] bg-line text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[5cqw] h-[5cqw]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></span>
-          <p class="text-terra text-[4.4cqw] font-black leading-tight mt-[0.9cqw]">24h</p>
-          <p class="text-text text-[2.5cqw] font-bold leading-tight mt-[0.6cqw]">LINEで写真査定</p>
-          <p class="text-text-lighter text-[1.8cqw] leading-tight mt-[0.6cqw]">写真送信で平均3分で概算回答</p>
+        <div class="relative py-[4.5cqw] px-[1cqw]"><span class="absolute top-0 right-[12%] bg-line text-white text-[1.9cqw] font-black px-[1.4cqw] py-[0.3cqw] rounded-full">NEW</span>
+          <p class="text-terra font-black text-[8.2cqw] leading-none">24h</p>
+          <p class="text-text font-bold text-[3.1cqw] leading-tight mt-[1.5cqw]">LINEで写真査定</p>
+          <p class="text-text-lighter text-[2.2cqw] leading-tight mt-[0.8cqw]">写真送信で平均3分で概算回答</p>
         </div>
-        <div class="relative bg-white rounded-[2.2cqw] border border-border shadow-md p-[2.3cqw] text-center">
-          <span class="inline-flex items-center justify-center w-[6.2cqw] h-[6.2cqw] rounded-[1.4cqw] bg-terra text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[4.6cqw] h-[4.6cqw]" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5h6L10 22l8.5-11.5h-6L13 2z"/></svg></span>
-          <p class="text-terra text-[4.4cqw] font-black leading-tight mt-[0.9cqw]">30分</p>
-          <p class="text-text text-[2.5cqw] font-bold leading-tight mt-[0.6cqw]">最短訪問</p>
-          <p class="text-text-lighter text-[1.8cqw] leading-tight mt-[0.6cqw]">当日対応のご相談OK</p>
+        <div class="relative py-[4.5cqw] px-[1cqw]">
+          <p class="text-terra font-black text-[8.2cqw] leading-none">30分</p>
+          <p class="text-text font-bold text-[3.1cqw] leading-tight mt-[1.5cqw]">最短訪問</p>
+          <p class="text-text-lighter text-[2.2cqw] leading-tight mt-[0.8cqw]">当日対応のご相談OK</p>
         </div>
     </div>
-    <div class="grid grid-cols-2 gap-[1.8cqw] mt-[2.6cqw]">
-        <span class="bg-white rounded-[1.8cqw] border border-border shadow-sm text-text text-[2.4cqw] font-bold px-[2cqw] py-[1.4cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra">✓</span>古物商許可取得済</span>
-        <span class="bg-white rounded-[1.8cqw] border border-border shadow-sm text-text text-[2.4cqw] font-bold px-[2cqw] py-[1.4cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra">✓</span>追加料金一切なし</span>
-        <span class="bg-white rounded-[1.8cqw] border border-border shadow-sm text-text text-[2.4cqw] font-bold px-[2cqw] py-[1.4cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra">✓</span>1点からOK</span>
-        <span class="bg-white rounded-[1.8cqw] border border-border shadow-sm text-text text-[2.4cqw] font-bold px-[2cqw] py-[1.4cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra">✓</span>土日祝・年末年始OK</span>
-        <span class="bg-white rounded-[1.8cqw] border border-border shadow-sm text-text text-[2.4cqw] font-bold px-[2cqw] py-[1.4cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra">✓</span>27エリア対応</span>
-        <span class="bg-white rounded-[1.8cqw] border border-border shadow-sm text-text text-[2.4cqw] font-bold px-[2cqw] py-[1.4cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra">✓</span>現金即払い</span>
+    <div class="grid grid-cols-2 gap-[2cqw] mt-[5cqw]">
+        <span class="bg-white rounded-full border border-border text-text text-[2.5cqw] font-bold px-[2cqw] py-[1.5cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra font-black">✓</span>古物商許可取得済</span>
+        <span class="bg-white rounded-full border border-border text-text text-[2.5cqw] font-bold px-[2cqw] py-[1.5cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra font-black">✓</span>追加料金一切なし</span>
+        <span class="bg-white rounded-full border border-border text-text text-[2.5cqw] font-bold px-[2cqw] py-[1.5cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra font-black">✓</span>1点からOK</span>
+        <span class="bg-white rounded-full border border-border text-text text-[2.5cqw] font-bold px-[2cqw] py-[1.5cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra font-black">✓</span>土日祝・年末年始OK</span>
+        <span class="bg-white rounded-full border border-border text-text text-[2.5cqw] font-bold px-[2cqw] py-[1.5cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra font-black">✓</span>27エリア対応</span>
+        <span class="bg-white rounded-full border border-border text-text text-[2.5cqw] font-bold px-[2cqw] py-[1.5cqw] inline-flex items-center justify-center gap-[1.2cqw]"><span class="text-terra font-black">✓</span>現金即払い</span>
     </div>
-    <div class="bg-dark rounded-[2.2cqw] mt-[2.8cqw] px-[3.2cqw] py-[2.8cqw] flex items-center gap-[2.6cqw]">
-      <span class="inline-flex items-center justify-center w-[8.6cqw] h-[8.6cqw] rounded-full bg-terra text-white flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-[4.4cqw] h-[4.4cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-      <div class="text-left">
-        <p class="text-amber-light text-[2.3cqw] font-bold leading-tight">古物商許可で安心の買取</p>
-        <p class="text-white text-[3.4cqw] font-black leading-tight mt-[0.6cqw]">古物商許可 第541052601400号</p>
-        <p class="text-white/60 text-[2.2cqw] leading-tight mt-[0.8cqw]">名古屋市公安委員会届出／名古屋市中村区横井2-71 実店舗</p>
+    <div class="bg-[#241b15] rounded-[2.4cqw] mt-[5cqw] px-[3.4cqw] py-[2.8cqw] flex items-center gap-[2.6cqw] text-left">
+      <span class="inline-flex items-center justify-center w-[8cqw] h-[8cqw] rounded-full border border-[#b08d3f] text-[#e2c264] flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-[4.2cqw] h-[4.2cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      <div>
+        <p class="text-[#e8a85a] text-[2.2cqw] font-bold leading-tight">古物商許可で安心の買取</p>
+        <p class="text-white text-[3.3cqw] font-black leading-tight mt-[0.6cqw]">古物商許可 第541052601400号</p>
+        <p class="text-white/55 text-[2.1cqw] leading-tight mt-[0.7cqw]">名古屋市公安委員会届出／名古屋市中村区横井2-71 実店舗</p>
       </div>
     </div>
   </div>
-  <!-- PC -->
-  <div class="hidden md:block mx-auto max-w-[1536px] @container pt-[2cqw] pb-[2.6cqw]">
-    <div class="grid grid-cols-4 gap-[1.4cqw] mx-auto w-[83cqw]">
-        <div class="relative bg-white rounded-[1.1cqw] border border-border shadow-lg p-[1.4cqw] text-center">
-          <span class="inline-flex items-center justify-center w-[3cqw] h-[3cqw] rounded-[0.8cqw] bg-terra text-white font-black text-[1.5cqw]">¥</span>
-          <p class="text-terra text-[2.3cqw] font-black leading-tight mt-[0.6cqw]">¥0</p>
-          <p class="text-text text-[1.15cqw] font-bold leading-tight mt-[0.35cqw]">出張費・査定費</p>
-          <p class="text-text-lighter text-[0.88cqw] leading-tight mt-[0.35cqw]">見積もり・キャンセル0円</p>
+  <div class="hidden md:block mx-auto max-w-[1536px] @container pt-[2.6cqw] pb-[3cqw] text-center">
+    <div class="grid grid-cols-4 divide-x divide-border mx-auto w-[71.6cqw]">
+        <div class="relative py-[1.4cqw] px-[0.8cqw]">
+          <p class="text-terra font-black text-[3.4cqw] leading-none">¥0</p>
+          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.55cqw]">出張費・査定費</p>
+          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.35cqw]">見積もり・キャンセル0円</p>
         </div>
-        <div class="relative bg-white rounded-[1.1cqw] border border-border shadow-lg p-[1.4cqw] text-center">
-          <span class="inline-flex items-center justify-center w-[3cqw] h-[3cqw] rounded-[0.8cqw] bg-terra text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[1.8cqw] h-[1.8cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <p class="text-terra text-[2.3cqw] font-black leading-tight mt-[0.6cqw]">21時</p>
-          <p class="text-text text-[1.15cqw] font-bold leading-tight mt-[0.35cqw]">電話受付</p>
-          <p class="text-text-lighter text-[0.88cqw] leading-tight mt-[0.35cqw]">9:00-21:00 年中無休</p>
+        <div class="relative py-[1.4cqw] px-[0.8cqw]">
+          <p class="text-terra font-black text-[3.4cqw] leading-none">21時</p>
+          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.55cqw]">電話受付</p>
+          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.35cqw]">9:00-21:00 年中無休</p>
         </div>
-        <div class="relative bg-white rounded-[1.1cqw] border border-line/50 shadow-lg p-[1.4cqw] text-center"><span class="absolute top-[0.7cqw] right-[0.7cqw] bg-line text-white text-[0.78cqw] font-black px-[0.65cqw] py-[0.18cqw] rounded-full">NEW</span>
-          <span class="inline-flex items-center justify-center w-[3cqw] h-[3cqw] rounded-[0.8cqw] bg-line text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[1.9cqw] h-[1.9cqw]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></span>
-          <p class="text-terra text-[2.3cqw] font-black leading-tight mt-[0.6cqw]">24h</p>
-          <p class="text-text text-[1.15cqw] font-bold leading-tight mt-[0.35cqw]">LINEで写真査定</p>
-          <p class="text-text-lighter text-[0.88cqw] leading-tight mt-[0.35cqw]">写真送信で平均3分で概算回答</p>
+        <div class="relative py-[1.4cqw] px-[0.8cqw]"><span class="absolute top-0 right-[12%] bg-line text-white text-[0.72cqw] font-black px-[0.55cqw] py-[0.14cqw] rounded-full">NEW</span>
+          <p class="text-terra font-black text-[3.4cqw] leading-none">24h</p>
+          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.55cqw]">LINEで写真査定</p>
+          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.35cqw]">写真送信で平均3分で概算回答</p>
         </div>
-        <div class="relative bg-white rounded-[1.1cqw] border border-border shadow-lg p-[1.4cqw] text-center">
-          <span class="inline-flex items-center justify-center w-[3cqw] h-[3cqw] rounded-[0.8cqw] bg-terra text-white"><svg xmlns="http://www.w3.org/2000/svg" class="w-[1.8cqw] h-[1.8cqw]" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5h6L10 22l8.5-11.5h-6L13 2z"/></svg></span>
-          <p class="text-terra text-[2.3cqw] font-black leading-tight mt-[0.6cqw]">30分</p>
-          <p class="text-text text-[1.15cqw] font-bold leading-tight mt-[0.35cqw]">最短訪問</p>
-          <p class="text-text-lighter text-[0.88cqw] leading-tight mt-[0.35cqw]">当日対応のご相談OK</p>
+        <div class="relative py-[1.4cqw] px-[0.8cqw]">
+          <p class="text-terra font-black text-[3.4cqw] leading-none">30分</p>
+          <p class="text-text font-bold text-[1.15cqw] leading-tight mt-[0.55cqw]">最短訪問</p>
+          <p class="text-text-lighter text-[0.85cqw] leading-tight mt-[0.35cqw]">当日対応のご相談OK</p>
         </div>
     </div>
-    <div class="flex justify-center gap-[0.9cqw] mt-[1.5cqw]">
-        <span class="bg-white rounded-[0.7cqw] border border-border shadow-sm text-text text-[1cqw] font-bold px-[1.2cqw] py-[0.7cqw] inline-flex items-center gap-[0.5cqw]"><span class="text-terra">✓</span>古物商許可取得済</span>
-        <span class="bg-white rounded-[0.7cqw] border border-border shadow-sm text-text text-[1cqw] font-bold px-[1.2cqw] py-[0.7cqw] inline-flex items-center gap-[0.5cqw]"><span class="text-terra">✓</span>追加料金一切なし</span>
-        <span class="bg-white rounded-[0.7cqw] border border-border shadow-sm text-text text-[1cqw] font-bold px-[1.2cqw] py-[0.7cqw] inline-flex items-center gap-[0.5cqw]"><span class="text-terra">✓</span>1点からOK</span>
-        <span class="bg-white rounded-[0.7cqw] border border-border shadow-sm text-text text-[1cqw] font-bold px-[1.2cqw] py-[0.7cqw] inline-flex items-center gap-[0.5cqw]"><span class="text-terra">✓</span>土日祝・年末年始OK</span>
-        <span class="bg-white rounded-[0.7cqw] border border-border shadow-sm text-text text-[1cqw] font-bold px-[1.2cqw] py-[0.7cqw] inline-flex items-center gap-[0.5cqw]"><span class="text-terra">✓</span>27エリア対応</span>
-        <span class="bg-white rounded-[0.7cqw] border border-border shadow-sm text-text text-[1cqw] font-bold px-[1.2cqw] py-[0.7cqw] inline-flex items-center gap-[0.5cqw]"><span class="text-terra">✓</span>現金即払い</span>
+    <div class="flex justify-center gap-[0.9cqw] mt-[1.8cqw]">
+        <span class="bg-white rounded-full border border-border text-text text-[0.95cqw] font-bold px-[1.15cqw] py-[0.6cqw] inline-flex items-center gap-[0.45cqw]"><span class="text-terra font-black">✓</span>古物商許可取得済</span>
+        <span class="bg-white rounded-full border border-border text-text text-[0.95cqw] font-bold px-[1.15cqw] py-[0.6cqw] inline-flex items-center gap-[0.45cqw]"><span class="text-terra font-black">✓</span>追加料金一切なし</span>
+        <span class="bg-white rounded-full border border-border text-text text-[0.95cqw] font-bold px-[1.15cqw] py-[0.6cqw] inline-flex items-center gap-[0.45cqw]"><span class="text-terra font-black">✓</span>1点からOK</span>
+        <span class="bg-white rounded-full border border-border text-text text-[0.95cqw] font-bold px-[1.15cqw] py-[0.6cqw] inline-flex items-center gap-[0.45cqw]"><span class="text-terra font-black">✓</span>土日祝・年末年始OK</span>
+        <span class="bg-white rounded-full border border-border text-text text-[0.95cqw] font-bold px-[1.15cqw] py-[0.6cqw] inline-flex items-center gap-[0.45cqw]"><span class="text-terra font-black">✓</span>27エリア対応</span>
+        <span class="bg-white rounded-full border border-border text-text text-[0.95cqw] font-bold px-[1.15cqw] py-[0.6cqw] inline-flex items-center gap-[0.45cqw]"><span class="text-terra font-black">✓</span>現金即払い</span>
     </div>
-    <div class="bg-[#241b15] rounded-[1cqw] mt-[1.6cqw] mx-auto w-[83cqw] px-[2.2cqw] py-[1.5cqw] flex items-center justify-center gap-[1.3cqw]">
-      <span class="inline-flex items-center justify-center w-[3.2cqw] h-[3.2cqw] rounded-full bg-terra text-white flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-[1.7cqw] h-[1.7cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-      <div class="text-left">
-        <p class="text-amber-light text-[0.95cqw] font-bold leading-tight">古物商許可で安心の買取</p>
-        <p class="text-white text-[1.9cqw] font-black leading-tight mt-[0.2cqw]">古物商許可 第541052601400号</p>
-      </div>
-      <div class="h-[2.8cqw] w-px bg-white/25 mx-[0.8cqw]"></div>
-      <p class="text-white/75 text-[1.05cqw]">名古屋市公安委員会届出／<b class="text-white/95">名古屋市中村区横井2-71 実店舗</b></p>
+    <div class="bg-[#241b15] rounded-[0.9cqw] mt-[1.8cqw] mx-auto w-[71.6cqw] px-[2cqw] py-[1.1cqw] flex items-center justify-center gap-[1.2cqw]">
+      <span class="inline-flex items-center justify-center w-[2.8cqw] h-[2.8cqw] rounded-full border border-[#b08d3f] text-[#e2c264] flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="w-[1.5cqw] h-[1.5cqw]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      <p class="text-[#e8a85a] text-[0.88cqw] font-bold">古物商許可で安心の買取</p>
+      <p class="text-white text-[1.35cqw] font-black">古物商許可 第541052601400号</p>
+      <span class="h-[1.8cqw] w-px bg-white/25 mx-[0.5cqw]"></span>
+      <p class="text-white/65 text-[0.95cqw]">名古屋市公安委員会届出／<b class="text-white/90">名古屋市中村区横井2-71 実店舗</b></p>
     </div>
   </div>
-</section>
-<!-- ═══ お悩み: 背景画像+暗めオーバーレイ ═══ --><section class="relative py-20 md:py-28 overflow-hidden text-white"><img src={bgPain} alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="1200" height="800" /><div class="absolute inset-0 bg-dark/80"></div>
+</section><!-- ═══ お悩み: 背景画像+暗めオーバーレイ ═══ --><section class="relative py-20 md:py-28 overflow-hidden text-white"><img src={bgPain} alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" width="1200" height="800" /><div class="absolute inset-0 bg-dark/80"></div>
   <div class="relative max-w-4xl mx-auto px-5">
     <div class="text-center mb-10 reveal reveal-up">
       <p class="text-terra-light text-xs font-bold tracking-widest uppercase mb-2">Troubles</p>
