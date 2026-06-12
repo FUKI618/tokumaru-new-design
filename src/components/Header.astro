@@ -1,13 +1,14 @@
 ---
 import { homePath, sectionPath, assetPath } from "../lib/site";
-const logoUrl = assetPath("logo.webp");
+const sealUrl = assetPath("images/brand-seal-ink.webp");
+const wordmarkUrl = assetPath("images/brand-wordmark.webp");
 ---
 <header class="sticky top-0 z-50 bg-navy text-white shadow-lg">
   <div class="max-w-7xl mx-auto px-5 h-14 flex items-center justify-between">
     <!-- Logo -->
-    <a href={homePath} class="flex items-center gap-2 flex-shrink-0">
-      <img src={logoUrl} alt="徳丸商会" width="36" height="36" class="w-9 h-9 object-contain" style="filter: drop-shadow(0 0 1px rgba(255,255,255,0.3));" />
-      <span class="text-base font-bold">徳丸商会</span>
+    <a href={homePath} class="flex items-center gap-2.5 flex-shrink-0">
+      <img src={sealUrl} alt="" width="36" height="36" class="w-9 h-9 object-contain" />
+      <img src={wordmarkUrl} alt="徳丸商会" width="580" height="136" class="h-[22px] w-auto" />
     </a>
 
     <!-- Nav (desktop) -->
