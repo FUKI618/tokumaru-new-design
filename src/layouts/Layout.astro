@@ -22,8 +22,7 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
 ---
 
 <!doctype html>
-<html lang="ja">
-  <head>
+<html lang="ja"><head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
@@ -64,25 +63,17 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap"
       rel="stylesheet"
     />
 
-    <!-- GTMはbody末尾に配置（headのCSS読み込みをブロックしないため） -->
-  </head>
-  <body class="antialiased">
-    <ScrollToTop />
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
+    <!-- GTMはbody末尾に配置（headのCSS読み込みをブロックしないため） --></head><body class="antialiased">
+    <ScrollToTop /><!-- Google Tag Manager (noscript) --><noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W493L98W"
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-    <slot />
-
-    <!-- Alpine.js -->
-    <script>
+    <slot /><script>
       import Alpine from "alpinejs";
       window.Alpine = Alpine;
       Alpine.start();
@@ -93,22 +84,28 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
           document.documentElement.classList.add('loaded');
         }, 500);
       });
-    </script>
-
-    <!-- Google Tag Manager: 基準書 §3 に準拠し3秒遅延でTBT削減（FCP/LCPに影響させない） -->
-    <script is:inline>
+    </script><script is:inline>
       window.dataLayer = window.dataLayer || [];
-      setTimeout(function () {
-        (function(w,d,s,l,i){w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-W493L98W');
-      }, 3000);
-    </script>
-
-    <!-- JSON-LD: body末尾に配置（headのCSS読み込みをブロックしないため） -->
-    <script type="application/ld+json" set:html={JSON.stringify({
+      (function (w, d, i) {
+        var loaded = false;
+        var evts = ['pointerdown', 'touchstart', 'mousedown', 'keydown'];
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          evts.forEach(function (e) { w.removeEventListener(e, load, { capture: true }); });
+          w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName('script')[0], j = d.createElement('script');
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
+          f.parentNode.insertBefore(j, f);
+        }
+        // 「タップした瞬間」にGTMを起動して電話CVの取りこぼしを防ぐ
+        evts.forEach(function (e) { w.addEventListener(e, load, { once: true, capture: true, passive: true }); });
+        // 無操作セッション用フォールバック（idle、最大2.5s）
+        if ('requestIdleCallback' in w) { w.requestIdleCallback(load, { timeout: 2500 }); }
+        else { setTimeout(load, 2500); }
+      })(window, document, 'GTM-W493L98W');
+    </script><script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": `${homeUrl}#localbusiness`,
@@ -172,14 +169,13 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "残置物撤去" } }
         ]
       }
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
+    })} /><script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
       "@id": `${homeUrl}#organization`,
       "name": company.name,
       "url": homeUrl,
-      "logo": new URL(assetPath("logo.svg"), siteUrl).toString(),
+      "logo": new URL(assetPath("images/brand-seal.webp"), siteUrl).toString(),
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": company.phone,
@@ -187,9 +183,7 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
         "availableLanguage": "Japanese",
         "areaServed": "JP"
       }
-    })} />
-    <!-- JSON-LD: WebSite (sub-pageの#website ref参照に使用) -->
-    <script type="application/ld+json" set:html={JSON.stringify({
+    })} /><!-- JSON-LD: WebSite (sub-pageの#website ref参照に使用) --><script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
       "@id": `${homeUrl}#website`,
@@ -198,19 +192,14 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
       "inLanguage": "ja",
       "publisher": { "@id": `${homeUrl}#organization` },
       "about": { "@id": `${homeUrl}#localbusiness` }
-    })} />
-    <!-- JSON-LD: BreadcrumbList -->
-    <script type="application/ld+json" set:html={JSON.stringify({
+    })} /><!-- JSON-LD: BreadcrumbList --><script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "徳丸商会トップ", "item": homeUrl }
       ]
-    })} />
-    {includeTopSchemas && (
-      <>
-        <script type="application/ld+json" set:html={JSON.stringify(faqsToJsonLd())} />
-        <script type="application/ld+json" set:html={JSON.stringify({
+    })} />{includeTopSchemas && (
+      <><script type="application/ld+json" set:html={JSON.stringify(faqsToJsonLd())} /><script type="application/ld+json" set:html={JSON.stringify({
           "@context": "https://schema.org", "@type": "HowTo",
           "name": "名古屋で出張買取を依頼する方法",
           "description": "徳丸商会の出張買取サービスを利用する手順です。",
@@ -221,14 +210,10 @@ const robots = noindex ? "noindex, nofollow, max-image-preview:large" : "index, 
             { "@type": "HowToStep", "position": 2, "name": "ご訪問・査定・現金払い", "text": "スタッフがご自宅にお伺いし、お品物を丁寧に査定。その場で現金をお渡しします。" },
             { "@type": "HowToStep", "position": 3, "name": "お品物の運び出し", "text": "重い家電や大型家具もスタッフが搬出します。" }
           ]
-        })} />
-        <script type="application/ld+json" set:html={JSON.stringify({
+        })} /><script type="application/ld+json" set:html={JSON.stringify({
           "@context": "https://schema.org", "@type": "WebPage",
           "name": title, "description": description, "url": canonicalUrl, "inLanguage": "ja",
           "about": { "@id": `${homeUrl}#localbusiness` },
           "primaryImageOfPage": { "@type": "ImageObject", "url": ogImage }
-        })} />
-      </>
-    )}
-  </body>
-</html>
+        })} /></>
+    )}</body></html>

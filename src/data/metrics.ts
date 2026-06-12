@@ -19,8 +19,8 @@ export const metrics = {
   nagoyaWardCount: 16, // 名古屋市16区
   totalAreaCount: 27, // 名古屋16区＋近郊11市
   // キャンペーン割引率
-  seniorDiscount: 0.05, // ご高齢者(65歳以上)5%OFF
-  lineEstimateDiscount: 0.05, // LINE見積5%OFF
+  seniorDiscount: 0.10, // ご高齢者(65歳以上)買取金額10%UP
+  lineEstimateDiscount: 0.10, // LINE見積で買取金額10%UP
   // 法的根拠
   permitNumber: "第541052601400号",
   permitAuthority: "名古屋市公安委員会",
